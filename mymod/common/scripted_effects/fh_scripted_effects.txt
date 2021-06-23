@@ -1,0 +1,2355 @@
+
+build_up_county_effect = {
+	#castle
+	if = {
+		limit = {
+			has_building = castle_01
+			culture = {
+				has_innovation = innovation_battlements
+
+			}
+		}
+		add_building = castle_02
+	}
+	if = {
+		limit = {
+			has_building = castle_02
+			culture = {
+			has_innovation = innovation_hoardings
+			}
+		}
+		add_building = castle_03
+	}
+	if = {
+		limit = {
+			has_building = castle_03
+			culture = {
+			has_innovation = innovation_machicolations
+			}
+		}
+		add_building = castle_04
+	}
+
+	#city
+	if = {
+		limit = {
+			has_building = city_01
+			culture = {
+			has_innovation = innovation_manorialism
+			}
+		}
+		add_building = city_02
+	}
+	if = {
+		limit = {
+			has_building = city_02
+			culture = {
+			has_innovation = innovation_windmills
+			}
+		}
+		add_building = city_03
+	}
+	if = {
+		limit = {
+			has_building = city_03
+			culture = {
+			has_innovation = innovation_cranes
+			}
+		}
+		add_building = city_04
+	}
+
+	#temple
+	if = {
+		limit = {
+			has_building = temple_01
+			culture = {
+			has_innovation = innovation_manorialism
+			}
+		}
+		add_building = temple_02
+	}
+	if = {
+		limit = {
+			has_building = temple_02
+			culture = {
+			has_innovation = innovation_windmills
+			}
+		}
+		add_building = city_03
+	}
+	if = {
+		limit = {
+			has_building = temple_03
+			culture = {
+			has_innovation = innovation_cranes
+			}
+		}
+		add_building = temple_04
+	}
+
+	#guild halls
+	if = {
+		limit = {
+			has_building_or_higher = city_04
+			NOT = {
+				has_building_or_higher_or_higher = guild_halls_08
+			}
+		}
+		add_building = guild_halls_08
+	}
+	if = {
+		limit = {
+			has_building_or_higher = city_03
+			NOT = {
+				has_building_or_higher = guild_halls_06
+			}
+		}
+		add_building = guild_halls_06
+	}
+	if = {
+		limit = {
+			has_building_or_higher = city_02
+			NOT = {
+				has_building_or_higher = guild_halls_04
+			}
+		}
+		add_building = guild_halls_04
+	}
+	if = {
+		limit = {
+			has_building_or_higher = city_01
+			NOT = {
+				has_building_or_higher = guild_halls_02
+			}
+		}
+		add_building = guild_halls_02
+	}
+
+	#monasteries
+	if = {
+		limit = {
+			has_building_or_higher = temple_04
+			NOT = {
+				has_building_or_higher = monastic_schools_08
+			}
+		}
+		add_building = monastic_schools_08
+	}
+	if = {
+		limit = {
+			has_building_or_higher = temple_03
+			NOT = {
+				has_building_or_higher = monastic_schools_06
+			}
+		}
+		add_building = monastic_schools_06
+	}
+	if = {
+		limit = {
+			has_building_or_higher = temple_02
+			NOT = {
+				has_building_or_higher = monastic_schools_04
+			}
+		}
+		add_building = monastic_schools_04
+	}
+	if = {
+		limit = {
+			has_building_or_higher = temple_01
+			NOT = {
+				has_building_or_higher = monastic_schools_02
+			}
+		}
+		add_building = monastic_schools_02
+	}
+
+	#tradeport
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			NOT = {
+				has_building_or_higher = common_tradeport_08
+			}
+			is_coastal = yes
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_cranes
+			}
+		}
+		add_building = common_tradeport_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			NOT = {
+				has_building_or_higher = common_tradeport_06
+			}
+			is_coastal = yes
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			}
+		}
+		add_building = common_tradeport_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			NOT = {
+				has_building_or_higher = common_tradeport_04
+			}
+			is_coastal = yes
+			culture = {
+			has_innovation = innovation_manorialism
+			}
+		}
+		add_building = common_tradeport_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			NOT = {
+				has_building_or_higher = common_tradeport_02
+			}
+			is_coastal = yes
+		}
+		add_building = common_tradeport_02
+	}
+
+	#military camps
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = drylands
+				terrain = desert
+				terrain = oasis
+				terrain = floodplains
+				terrain = steppe
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = wetlands
+				terrain = forest
+				terrain = taiga
+				terrain = jungle
+				terrain = hills
+			}
+			NOT = {
+				has_building_or_higher = military_camps_08
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			has_innovation = innovation_royal_armory
+			}
+		}
+		add_building = military_camps_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = drylands
+				terrain = desert
+				terrain = oasis
+				terrain = floodplains
+				terrain = steppe
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = wetlands
+				terrain = forest
+				terrain = taiga
+				terrain = jungle
+				terrain = hills
+			}
+			NOT = {
+				has_building_or_higher = military_camps_06
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			}
+		}
+		add_building = military_camps_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = drylands
+				terrain = desert
+				terrain = oasis
+				terrain = floodplains
+				terrain = steppe
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = wetlands
+				terrain = forest
+				terrain = taiga
+				terrain = jungle
+				terrain = hills
+			}
+			NOT = {
+				has_building_or_higher = military_camps_04
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			}
+		}
+		add_building = military_camps_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = drylands
+				terrain = desert
+				terrain = oasis
+				terrain = floodplains
+				terrain = steppe
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = wetlands
+				terrain = forest
+				terrain = taiga
+				terrain = jungle
+				terrain = hills
+			}
+			NOT = {
+				has_building_or_higher = military_camps_02
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			}
+		}
+		add_building = military_camps_02
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = drylands
+				terrain = desert
+				terrain = oasis
+				terrain = floodplains
+				terrain = steppe
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = wetlands
+				terrain = forest
+				terrain = taiga
+				terrain = jungle
+				terrain = hills
+			}
+			NOT = {
+				has_building_or_higher = military_camps_01
+			}
+		}
+		add_building = military_camps_01
+	}
+
+	#pastures
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = steppe
+				terrain = desert
+				terrain = drylands
+				terrain = oasis
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = hills
+				terrain = floodplains
+				AND = {
+					terrain = jungle
+					NOT = { geographical_region = world_innovation_elephants }
+				}
+			}
+			NOT = {
+				has_building_or_higher = pastures_08
+			}
+		}
+		add_building = pastures_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = steppe
+				terrain = desert
+				terrain = drylands
+				terrain = oasis
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = hills
+				terrain = floodplains
+				AND = {
+					terrain = jungle
+					NOT = { geographical_region = world_innovation_elephants }
+				}
+			}
+			NOT = {
+				has_building_or_higher = pastures_06
+			}
+		}
+		add_building = pastures_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = steppe
+				terrain = desert
+				terrain = drylands
+				terrain = oasis
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = hills
+				terrain = floodplains
+				AND = {
+					terrain = jungle
+					NOT = { geographical_region = world_innovation_elephants }
+				}
+			}
+			NOT = {
+				has_building_or_higher = pastures_04
+			}
+		}
+		add_building = pastures_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = steppe
+				terrain = desert
+				terrain = drylands
+				terrain = oasis
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = hills
+				terrain = floodplains
+				AND = {
+					terrain = jungle
+					NOT = { geographical_region = world_innovation_elephants }
+				}
+			}
+			NOT = {
+				has_building_or_higher = pastures_02
+			}
+		}
+		add_building = pastures_02
+	}
+
+	#hunting grounds
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			OR = {
+				terrain = plains
+				terrain = drylands
+				terrain = steppe
+				terrain = hills
+				terrain = taiga
+				terrain = forest
+				terrain = jungle
+				terrain = wetlands
+			}
+			NOT = {
+				has_building_or_higher = hunting_grounds_08
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			has_innovation = innovation_cranes
+			}
+		}
+		add_building = hunting_grounds_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			OR = {
+				terrain = plains
+				terrain = drylands
+				terrain = steppe
+				terrain = hills
+				terrain = taiga
+				terrain = forest
+				terrain = jungle
+				terrain = wetlands
+			}
+			NOT = {
+				has_building_or_higher = hunting_grounds_06
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = hunting_grounds_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			OR = {
+				terrain = plains
+				terrain = drylands
+				terrain = steppe
+				terrain = hills
+				terrain = taiga
+				terrain = forest
+				terrain = jungle
+				terrain = wetlands
+			}
+			NOT = {
+				has_building_or_higher = hunting_grounds_04
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = hunting_grounds_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = plains
+				terrain = drylands
+				terrain = steppe
+				terrain = hills
+				terrain = taiga
+				terrain = forest
+				terrain = jungle
+				terrain = wetlands
+			}
+			NOT = {
+				has_building_or_higher = hunting_grounds_02
+			}
+			culture = {
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = hunting_grounds_02
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = plains
+				terrain = drylands
+				terrain = steppe
+				terrain = hills
+				terrain = taiga
+				terrain = forest
+				terrain = jungle
+				terrain = wetlands
+			}
+			NOT = {
+				has_building_or_higher = hunting_grounds_01
+			}
+		}
+		add_building = hunting_grounds_01
+	}
+
+	#orchards
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			OR = {
+				terrain = floodplains
+				terrain = oasis
+			}
+			NOT = {
+				has_building_or_higher = orchards_08
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			has_innovation = innovation_cranes
+			}
+		}
+		add_building = orchards_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			OR = {
+				terrain = floodplains
+				terrain = oasis
+			}
+			NOT = {
+				has_building_or_higher = orchards_06
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = orchards_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			OR = {
+				terrain = floodplains
+				terrain = oasis
+			}
+			NOT = {
+				has_building_or_higher = orchards_04
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = orchards_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = floodplains
+				terrain = oasis
+			}
+			NOT = {
+				has_building_or_higher = orchards_02
+			}
+			culture = {
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = orchards_02
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = floodplains
+				terrain = oasis
+			}
+			NOT = {
+				has_building_or_higher = orchards_01
+			}
+		}
+		add_building = orchards_01
+	}
+
+	#farm estates
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			terrain = farmlands
+			NOT = {
+				has_building_or_higher = farm_estates_08
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			has_innovation = innovation_cranes
+			}
+		}
+		add_building = farm_estates_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			terrain = farmlands
+			NOT = {
+				has_building_or_higher = farm_estates_06
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = farm_estates_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			terrain = farmlands
+			NOT = {
+				has_building_or_higher = farm_estates_04
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = farm_estates_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			terrain = farmlands
+			NOT = {
+				has_building_or_higher = farm_estates_02
+			}
+			culture = {
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = farm_estates_02
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			terrain = farmlands
+			NOT = {
+				has_building_or_higher = farm_estates_01
+			}
+		}
+		add_building = farm_estates_01
+	}
+
+	#regimental grounds
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			OR = {
+				terrain = floodplains
+				terrain = farmlands
+			}
+			NOT = {
+				has_building_or_higher = regimental_grounds_08
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			has_innovation = innovation_royal_armory
+			}
+		}
+		add_building = regimental_grounds_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			OR = {
+				terrain = floodplains
+				terrain = farmlands
+			}
+			NOT = {
+				has_building_or_higher = regimental_grounds_06
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			}
+		}
+		add_building = regimental_grounds_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			OR = {
+				terrain = floodplains
+				terrain = farmlands
+			}
+			NOT = {
+				has_building_or_higher = regimental_grounds_04
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			}
+		}
+		add_building = regimental_grounds_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = floodplains
+				terrain = farmlands
+			}
+			NOT = {
+				has_building_or_higher = regimental_grounds_01
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			}
+		}
+		add_building = regimental_grounds_02
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = floodplains
+				terrain = farmlands
+			}
+			NOT = {
+				has_building_or_higher = regimental_grounds_01
+			}
+		}
+		add_building = regimental_grounds_01
+	}
+
+	#ramparts
+	if = {
+		limit = {
+			has_building_or_higher = castle_04
+			OR = {
+				terrain = taiga
+				terrain = forest
+			}
+			NOT = {
+				has_building_or_higher = ramparts_08
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			has_innovation = innovation_royal_armory
+			}
+		}
+		add_building = ramparts_08
+	}
+	if = {
+		limit = {
+			has_building_or_higher = castle_03
+			OR = {
+				terrain = taiga
+				terrain = forest
+			}
+			NOT = {
+				has_building_or_higher = ramparts_06
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			}
+		}
+		add_building = ramparts_06
+	}
+	if = {
+		limit = {
+			has_building_or_higher = castle_02
+			OR = {
+				terrain = taiga
+				terrain = forest
+			}
+			NOT = {
+				has_building_or_higher = ramparts_04
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			}
+		}
+		add_building = ramparts_04
+	}
+	if = {
+		limit = {
+			has_building_or_higher = castle_01
+			OR = {
+				terrain = taiga
+				terrain = forest
+			}
+			NOT = {
+				has_building_or_higher = ramparts_02
+			}
+		}
+		add_building = ramparts_02
+	}
+
+	#curtain walls
+	if = {
+		limit = {
+			has_building_or_higher = castle_04
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = wetlands
+			}
+			NOT = {
+				has_building_or_higher = curtain_walls_08
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			has_innovation = innovation_royal_armory
+			}
+		}
+		add_building = curtain_walls_08
+	}
+	if = {
+		limit = {
+			has_building_or_higher = castle_03
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = wetlands
+			}
+			NOT = {
+				has_building_or_higher = curtain_walls_06
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			}
+		}
+		add_building = curtain_walls_06
+	}
+	if = {
+		limit = {
+			has_building_or_higher = castle_02
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = wetlands
+			}
+			NOT = {
+				has_building_or_higher = curtain_walls_04
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			}
+		}
+		add_building = curtain_walls_04
+	}
+	if = {
+		limit = {
+			has_building_or_higher = castle_01
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = wetlands
+			}
+			NOT = {
+				has_building_or_higher = curtain_walls_02
+			}
+		}
+		add_building = curtain_walls_02
+	}
+
+	#watchtowers
+	if = {
+		limit = {
+			has_building_or_higher = castle_04
+			OR = {
+				terrain = desert
+				terrain = drylands
+				terrain = oasis
+				terrain = floodplains
+				terrain = jungle
+				terrain = steppe
+			}
+			NOT = {
+				has_building_or_higher = watchtowers_08
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			has_innovation = innovation_royal_armory
+			}
+		}
+		add_building = watchtowers_08
+	}
+	if = {
+		limit = {
+			has_building_or_higher = castle_03
+			OR = {
+				terrain = desert
+				terrain = drylands
+				terrain = oasis
+				terrain = floodplains
+				terrain = jungle
+				terrain = steppe
+			}
+			NOT = {
+				has_building_or_higher = watchtowers_06
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			}
+		}
+		add_building = watchtowers_06
+	}
+	if = {
+		limit = {
+			has_building_or_higher = castle_02
+			OR = {
+				terrain = desert
+				terrain = drylands
+				terrain = oasis
+				terrain = floodplains
+				terrain = jungle
+				terrain = steppe
+			}
+			NOT = {
+				has_building_or_higher = watchtowers_04
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			}
+		}
+		add_building = watchtowers_04
+	}
+	if = {
+		limit = {
+			has_building_or_higher = castle_01
+			OR = {
+				terrain = desert
+				terrain = drylands
+				terrain = oasis
+				terrain = floodplains
+				terrain = jungle
+				terrain = steppe
+			}
+			NOT = {
+				has_building_or_higher = watchtowers_02
+			}
+		}
+		add_building = watchtowers_02
+	}
+
+	#cereal fields
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = drylands
+				terrain = floodplains
+			}
+			NOT = {
+				has_building_or_higher = cereal_fields_08
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			has_innovation = innovation_cranes
+			}
+		}
+		add_building = cereal_fields_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = drylands
+				terrain = floodplains
+			}
+			NOT = {
+				has_building_or_higher = cereal_fields_06
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = cereal_fields_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = drylands
+				terrain = floodplains
+			}
+			NOT = {
+				has_building_or_higher = cereal_fields_04
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = cereal_fields_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = drylands
+				terrain = floodplains
+			}
+			NOT = {
+				has_building_or_higher = cereal_fields_02
+			}
+			culture = {
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = cereal_fields_02
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = drylands
+				terrain = floodplains
+			}
+			NOT = {
+				has_building_or_higher = cereal_fields_01
+			}
+		}
+		add_building = cereal_fields_01
+	}
+
+	#outposts
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			OR = {
+				terrain = steppe
+				terrain = wetlands
+				terrain = taiga
+				terrain = forest
+				terrain = jungle
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = desert
+			}
+			NOT = {
+				has_building_or_higher = outposts_08
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			has_innovation = innovation_royal_armory
+			}
+		}
+		add_building = outposts_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			OR = {
+				terrain = steppe
+				terrain = wetlands
+				terrain = taiga
+				terrain = forest
+				terrain = jungle
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = desert
+			}
+			NOT = {
+				has_building_or_higher = outposts_06
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			}
+		}
+		add_building = outposts_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			OR = {
+				terrain = steppe
+				terrain = wetlands
+				terrain = taiga
+				terrain = forest
+				terrain = jungle
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = desert
+			}
+			NOT = {
+				has_building_or_higher = outposts_04
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			}
+		}
+		add_building = outposts_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = steppe
+				terrain = wetlands
+				terrain = taiga
+				terrain = forest
+				terrain = jungle
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = desert
+			}
+			NOT = {
+				has_building_or_higher = outposts_02
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			}
+		}
+		add_building = outposts_02
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = steppe
+				terrain = wetlands
+				terrain = taiga
+				terrain = forest
+				terrain = jungle
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = desert
+			}
+			NOT = {
+				has_building_or_higher = outposts_01
+			}
+		}
+		add_building = outposts_01
+	}
+
+	#barracks
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = drylands
+				terrain = hills
+				terrain = mountains
+				terrain = forest
+				terrain = taiga
+				terrain = jungle
+				terrain = wetlands
+				terrain = steppe
+			}
+			NOT = {
+				has_building_or_higher = barracks_08
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			has_innovation = innovation_royal_armory
+			}
+		}
+		add_building = barracks_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = drylands
+				terrain = hills
+				terrain = mountains
+				terrain = forest
+				terrain = taiga
+				terrain = jungle
+				terrain = wetlands
+				terrain = steppe
+			}
+			NOT = {
+				has_building_or_higher = barracks_06
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			}
+		}
+		add_building = barracks_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = drylands
+				terrain = hills
+				terrain = mountains
+				terrain = forest
+				terrain = taiga
+				terrain = jungle
+				terrain = wetlands
+				terrain = steppe
+			}
+			NOT = {
+				has_building_or_higher = barracks_04
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			}
+		}
+		add_building = barracks_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = drylands
+				terrain = hills
+				terrain = mountains
+				terrain = forest
+				terrain = taiga
+				terrain = jungle
+				terrain = wetlands
+				terrain = steppe
+			}
+			NOT = {
+				has_building_or_higher = barracks_02
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			}
+		}
+		add_building = barracks_02
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = farmlands
+				terrain = plains
+				terrain = drylands
+				terrain = hills
+				terrain = mountains
+				terrain = forest
+				terrain = taiga
+				terrain = jungle
+				terrain = wetlands
+				terrain = steppe
+			}
+			NOT = {
+				has_building_or_higher = barracks_01
+			}
+		}
+		add_building = barracks_01
+	}
+
+	#camel farms
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			OR = {
+				terrain = desert
+				terrain = desert_mountains
+				terrain = oasis
+				terrain = floodplains
+			}
+			NOT = {
+				has_building_or_higher = camel_farms_08
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			has_innovation = innovation_royal_armory
+			}
+		}
+		add_building = camel_farms_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			OR = {
+				terrain = desert
+				terrain = desert_mountains
+				terrain = oasis
+				terrain = floodplains
+			}
+			NOT = {
+				has_building_or_higher = camel_farms_06
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			}
+		}
+		add_building = camel_farms_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			OR = {
+				terrain = desert
+				terrain = desert_mountains
+				terrain = oasis
+				terrain = floodplains
+			}
+			NOT = {
+				has_building_or_higher = camel_farms_04
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			}
+		}
+		add_building = camel_farms_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = desert
+				terrain = desert_mountains
+				terrain = oasis
+				terrain = floodplains
+			}
+			NOT = {
+				has_building_or_higher = camel_farms_02
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			}
+		}
+		add_building = camel_farms_02
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = desert
+				terrain = desert_mountains
+				terrain = oasis
+				terrain = floodplains
+			}
+			NOT = {
+				has_building_or_higher = camel_farms_01
+			}
+		}
+		add_building = camel_farms_01
+	}
+
+	#logging camps
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			OR = {
+				terrain = taiga
+				terrain = forest
+				terrain = jungle
+			}
+			NOT = {
+				has_building_or_higher = logging_camps_08
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			has_innovation = innovation_cranes
+			}
+		}
+		add_building = logging_camps_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			OR = {
+				terrain = taiga
+				terrain = forest
+				terrain = jungle
+			}
+			NOT = {
+				has_building_or_higher = logging_camps_06
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = logging_camps_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			OR = {
+				terrain = taiga
+				terrain = forest
+				terrain = jungle
+			}
+			NOT = {
+				has_building_or_higher = logging_camps_04
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = logging_camps_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = taiga
+				terrain = forest
+				terrain = jungle
+			}
+			NOT = {
+				has_building_or_higher = logging_camps_02
+			}
+			culture = {
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = logging_camps_02
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = taiga
+				terrain = forest
+				terrain = jungle
+			}
+			NOT = {
+				has_building_or_higher = logging_camps_01
+			}
+		}
+		add_building = logging_camps_01
+	}
+
+	#peat quarries
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			terrain = wetlands
+			NOT = {
+				has_building_or_higher = peat_quarries_08
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			has_innovation = innovation_cranes
+			}
+		}
+		add_building = peat_quarries_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			terrain = wetlands
+			NOT = {
+				has_building_or_higher = peat_quarries_06
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = peat_quarries_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			terrain = wetlands
+			NOT = {
+				has_building_or_higher = peat_quarries_04
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = peat_quarries_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			terrain = wetlands
+			NOT = {
+				has_building_or_higher = peat_quarries_02
+			}
+			culture = {
+			has_innovation = innovation_crop_rotation
+			}
+
+		}
+		add_building = peat_quarries_02
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			terrain = wetlands
+			NOT = {
+				has_building_or_higher = peat_quarries_01
+			}
+		}
+		add_building = peat_quarries_01
+	}
+
+	#hill farms
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			terrain = hills
+			NOT = {
+				has_building_or_higher = hill_farms_08
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			has_innovation = innovation_cranes
+			}
+		}
+		add_building = hill_farms_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			terrain = hills
+			NOT = {
+				has_building_or_higher = hill_farms_06
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = hill_farms_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			terrain = hills
+			NOT = {
+				has_building_or_higher = hill_farms_04
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = hill_farms_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			terrain = hills
+			NOT = {
+				has_building_or_higher = hill_farms_02
+			}
+			culture = {
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = hill_farms_02
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			terrain = hills
+			NOT = {
+				has_building_or_higher = hill_farms_01
+			}
+		}
+		add_building = hill_farms_01
+	}
+
+	#elephant pens
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			terrain = jungle
+			NOT = {
+				has_building_or_higher = elephant_pens_08
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			has_innovation = innovation_cranes
+			}
+		}
+		add_building = elephant_pens_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			terrain = jungle
+			NOT = {
+				has_building_or_higher = elephant_pens_06
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = elephant_pens_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			terrain = jungle
+			NOT = {
+				has_building_or_higher = elephant_pens_04
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = elephant_pens_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			terrain = jungle
+			NOT = {
+				has_building_or_higher = elephant_pens_02
+			}
+			culture = {
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = elephant_pens_02
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			terrain = jungle
+			NOT = {
+				has_building_or_higher = elephant_pens_01
+			}
+		}
+		add_building = elephant_pens_01
+	}
+
+	#plantations
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			OR = {
+				terrain = desert
+				terrain = oasis
+			}
+			NOT = {
+				has_building_or_higher = plantations_08
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			has_innovation = innovation_cranes
+			}
+		}
+		add_building = plantations_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			OR = {
+				terrain = desert
+				terrain = oasis
+			}
+			NOT = {
+				has_building_or_higher = plantations_06
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = plantations_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			OR = {
+				terrain = desert
+				terrain = oasis
+			}
+			NOT = {
+				has_building_or_higher = plantations_04
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = plantations_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = desert
+				terrain = oasis
+			}
+			NOT = {
+				has_building_or_higher = plantations_02
+			}
+			culture = {
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = plantations_02
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = desert
+				terrain = oasis
+			}
+			NOT = {
+				has_building_or_higher = plantations_01
+			}
+		}
+		add_building = plantations_01
+	}
+
+	#quarries
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_04
+				has_building_or_higher = temple_04
+				has_building_or_higher = city_04
+			}
+			OR = {
+				terrain = mountains
+				terrain = desert_mountains
+			}
+			NOT = {
+				has_building_or_higher = quarries_08
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			has_innovation = innovation_cranes
+			}
+		}
+		add_building = quarries_08
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_03
+				has_building_or_higher = temple_03
+				has_building_or_higher = city_03
+			}
+			OR = {
+				terrain = mountains
+				terrain = desert_mountains
+			}
+			NOT = {
+				has_building_or_higher = quarries_06
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_windmills
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = quarries_06
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_02
+				has_building_or_higher = temple_02
+				has_building_or_higher = city_02
+			}
+			OR = {
+				terrain = mountains
+				terrain = desert_mountains
+			}
+			NOT = {
+				has_building_or_higher = quarries_04
+			}
+			culture = {
+			has_innovation = innovation_manorialism
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = quarries_04
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = mountains
+				terrain = desert_mountains
+			}
+			NOT = {
+				has_building_or_higher = quarries_02
+			}
+			culture = {
+			has_innovation = innovation_crop_rotation
+			}
+		}
+		add_building = quarries_02
+	}
+	if = {
+		limit = {
+			OR = {
+				has_building_or_higher = castle_01
+				has_building_or_higher = temple_01
+				has_building_or_higher = city_01
+			}
+			OR = {
+				terrain = mountains
+				terrain = desert_mountains
+			}
+			NOT = {
+				has_building_or_higher = quarries_01
+			}
+		}
+		add_building = quarries_01
+	}
+
+	#hill forts
+	if = {
+		limit = {
+			has_building_or_higher = castle_04
+			OR = {
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = hills
+			}
+			NOT = {
+				has_building_or_higher = hill_forts_08
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			has_innovation = innovation_royal_armory
+			}
+		}
+		add_building = hill_forts_08
+	}
+	if = {
+		limit = {
+			has_building_or_higher = castle_03
+			OR = {
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = hills
+			}
+			NOT = {
+				has_building_or_higher = hill_forts_06
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			has_innovation = innovation_castle_baileys
+			}
+		}
+		add_building = hill_forts_06
+	}
+	if = {
+		limit = {
+			has_building_or_higher = castle_02
+			OR = {
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = hills
+			}
+			NOT = {
+				has_building_or_higher = hill_forts_04
+			}
+			culture = {
+			has_innovation = innovation_barracks
+			has_innovation = innovation_burhs
+			}
+		}
+		add_building = hill_forts_04
+	}
+	if = {
+		limit = {
+			has_building_or_higher = castle_01
+			OR = {
+				terrain = mountains
+				terrain = desert_mountains
+				terrain = hills
+			}
+			NOT = {
+				has_building_or_higher = hill_forts_02
+			}
+		}
+		add_building = hill_forts_02
+	}
+}

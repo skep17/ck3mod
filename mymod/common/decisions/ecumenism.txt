@@ -1,0 +1,24 @@
+we_are_christians_too = {
+	title = we_are_christians_too
+
+	major = yes
+
+	is_shown = {
+		root.faith.religion = faith:catholic.religion
+		root.faith = { NOT = { has_doctrine = special_doctrine_ecumenical_christian } }
+	}
+
+	cost = {
+		piety = 1000
+		prestige = 1000
+	}
+
+	effect = {
+		root.faith = {
+			add_doctrine = special_doctrine_ecumenical_christian
+		}
+	}
+
+	ai_will_do = 0
+	ai_check_interval = 0
+}

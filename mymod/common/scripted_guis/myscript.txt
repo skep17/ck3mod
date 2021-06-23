@@ -1,0 +1,113 @@
+﻿build_up_county = {
+	scope = province
+	saved_scope = {
+		player
+	}
+
+	is_shown = {
+		AND = {
+			OR = {
+				has_holding_type = castle_holding
+				has_holding_type = city_holding
+				has_holding_type = church_holding
+			}
+			OR = {
+				province_owner = scope:player
+				province_owner.liege = scope:player
+				province_owner.liege.liege = scope:player
+				province_owner.liege.liege.liege = scope:player
+				province_owner.top_liege = scope:player
+			}
+		}
+	}
+	is_valid = {
+		always = yes
+	}
+	ai_is_valid = {
+		always = no
+	}
+	effect = {
+		#custom_tooltip = "builds up barony to it's maximum level based on technologies"
+		build_up_county_effect = yes
+	}
+}
+
+invite_local_man = {
+	scope = province
+	saved_scope = {
+		player
+	}
+	is_shown = {
+		OR = {
+			province_owner = scope:player
+			province_owner.liege = scope:player
+			province_owner.liege.liege = scope:player
+			province_owner.liege.liege.liege = scope:player
+			province_owner.top_liege = scope:player
+		}
+	}
+	is_valid = {
+		always = yes
+	}
+	ai_is_valid = {
+		always = no
+	}
+	effect = {
+		create_character = {
+			age = 18
+			gender = male
+			health = 5
+			fertility = 0.5
+			employer = scope:player
+			faith = root.county.faith
+			culture = root.county.culture
+			dynasty = none
+			martial = 5
+			prowess = 5
+			diplomacy = 5
+			stewardship = 5
+			intrigue = 5
+			learning = 5
+		}
+	}
+}
+
+invite_local_woman = {
+	scope = province
+	saved_scope = {
+		player
+	}
+	is_shown = {
+		OR = {
+			province_owner = scope:player
+			province_owner.liege = scope:player
+			province_owner.liege.liege = scope:player
+			province_owner.liege.liege.liege = scope:player
+			province_owner.top_liege = scope:player
+		}
+	}
+	is_valid = {
+		always = yes
+	}
+	ai_is_valid = {
+		always = no
+	}
+	effect = {
+		create_character = {
+			age = 18
+			gender = female
+			health = 5
+			fertility = 0.5
+			employer = scope:player
+			faith = root.county.faith
+			culture = root.county.culture
+			dynasty = none
+			martial = 5
+			prowess = 5
+			diplomacy = 5
+			stewardship = 5
+			intrigue = 5
+			learning = 5
+		}
+	}
+}
