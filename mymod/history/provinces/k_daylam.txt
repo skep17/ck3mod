@@ -19,7 +19,7 @@
 4325 = {	#Zanjan
 	culture = daylamite
 	religion = zayidi
-	holding = castle_holding
+	holding = castle_holding	
 	1130.1.1 = { religion = ismaili }
 }
 4326 = {	#Afshar
@@ -264,7 +264,7 @@
 
 ##d_shirvan ###################################
 ###c_shirvan
-668 = {		#Shirvan
+5771 = {		#Baku
 	culture = persian
 	religion = mazdayasna
 	holding = castle_holding
@@ -272,7 +272,7 @@
 		religion = ashari
 	}
 }
-5771 = {	#Baku
+5772 = {	#Maras
 	holding = city_holding
 	1066.1.1 = {
 		buildings = {
@@ -282,7 +282,7 @@
 		}
 	}
 }
-5772 = {	#Maras
+668 = {	#Maskut
 	holding = none
 }
 5773 = {	#Salyan
@@ -302,13 +302,9 @@
 	holding = city_holding
 }
 5775 = {	#Kudevan
-	culture = persian
-	religion = mazdayasna
 	holding = none
 }
 5776 = {	#Paidangaran
-	culture = persian
-	religion = mazdayasna
 	holding = none
 }
 
@@ -348,18 +344,19 @@
 	holding = none
 }
 5789 = {	#Varsan
-	culture = daylamite
-	religion = mazdayasna
-	holding = castle_holding
+	holding = none
 }
 5791 = {	#Langarkanan
-	holding = none
+	culture = persian
+	religion = khurramism
+	holding = castle_holding
+	900.1.1 = {
+		religion = ashari
+	}
 }
 5792 = {	#Nakorzan
 	holding = none
 }
 5793 = {	#Barzand
-	culture = daylamite
-	religion = mazdayasna
 	holding = city_holding
 }

@@ -53,21 +53,72 @@ invite_local_man = {
 		always = no
 	}
 	effect = {
-		create_character = {
-			age = 18
-			gender = male
-			health = 5
-			fertility = 0.5
-			employer = scope:player
-			faith = root.county.faith
-			culture = root.county.culture
-			dynasty = none
-			martial = 5
-			prowess = 5
-			diplomacy = 5
-			stewardship = 5
-			intrigue = 5
-			learning = 5
+		if = {
+			limit = {
+				scope:player = {
+					has_variable = invite_local_dynasty_var
+					has_variable = invite_local_religion_var
+				}
+			}
+
+			create_character = {
+				age = 18
+				gender = male
+				employer = scope:player
+				faith = scope:player.faith
+				culture = root.county.culture
+				dynasty = generate
+				prowess = 10
+				trait = physique_good_3
+			}
+		}
+		else_if = {
+			limit = {
+				scope:player = {
+					has_variable = invite_local_dynasty_var
+				}
+			}
+
+			create_character = {
+				age = 18
+				gender = male
+				employer = scope:player
+				faith = root.county.faith
+				culture = root.county.culture
+				dynasty = generate
+				prowess = 10
+				trait = physique_good_3
+			}
+		}
+		else_if = {
+			limit = {
+				scope:player = {
+					has_variable = invite_local_religion_var
+				}
+			}
+
+			create_character = {
+				age = 18
+				gender = male
+				employer = scope:player
+				faith = scope:player.faith
+				culture = root.county.culture
+				dynasty = none
+				prowess = 10
+				trait = physique_good_3
+			}
+		}
+		else = {
+			create_character = {
+				age = 18
+				gender = male
+				employer = scope:player
+				faith = root.county.faith
+				culture = root.county.culture
+				dynasty = none
+				prowess = 10
+				trait = physique_good_3
+			}
 		}
 	}
 }
@@ -93,21 +144,68 @@ invite_local_woman = {
 		always = no
 	}
 	effect = {
-		create_character = {
-			age = 18
-			gender = female
-			health = 5
-			fertility = 0.5
-			employer = scope:player
-			faith = root.county.faith
-			culture = root.county.culture
-			dynasty = none
-			martial = 5
-			prowess = 5
-			diplomacy = 5
-			stewardship = 5
-			intrigue = 5
-			learning = 5
+		if = {
+			limit = {
+				scope:player = {
+					has_variable = invite_local_dynasty_var
+					has_variable = invite_local_religion_var
+				}
+			}
+
+			create_character = {
+				age = 18
+				gender = female
+				employer = scope:player
+				faith = scope:player.faith
+				culture = root.county.culture
+				dynasty = generate
+				trait = beauty_good_3
+			}
+		}
+		else_if = {
+			limit = {
+				scope:player = {
+					has_variable = invite_local_dynasty_var
+				}
+			}
+
+			create_character = {
+				age = 18
+				gender = female
+				employer = scope:player
+				faith = root.county.faith
+				culture = root.county.culture
+				dynasty = generate
+				trait = beauty_good_3
+			}
+		}
+		else_if = {
+			limit = {
+				scope:player = {
+					has_variable = invite_local_religion_var
+				}
+			}
+
+			create_character = {
+				age = 18
+				gender = female
+				employer = scope:player
+				faith = scope:player.faith
+				culture = root.county.culture
+				dynasty = none
+				trait = beauty_good_3
+			}
+		}
+		else = {
+			create_character = {
+				age = 18
+				gender = female
+				employer = scope:player
+				faith = root.county.faith
+				culture = root.county.culture
+				dynasty = none
+				trait = beauty_good_3
+			}
 		}
 	}
 }

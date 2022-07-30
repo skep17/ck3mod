@@ -2,7 +2,7 @@
 k_armenia = {
 	867.1.1 = {	change_development_level = 5 }
 	1066.1.1 = { change_development_level = 8 }
-
+	
 	#Previous Kings of Armenia removed to a separate title: Arsacid Armenia *was* a kingdom, but the regnal numbering is reset for Bagratid Armenia. Keeping them in the same title was therefore messing up medieval Armenia quite drastically (Ashot I became Ashot IV, etc).
 	654.1.1 = {
 		liege = e_arabia
@@ -11,7 +11,7 @@ k_armenia = {
 	#862.1.1 = {
 		#holder = 41505
 	#}
-
+	
 	#Independance from the Abbasid
 	#Bagratid Armenia
 	884.1.1 = {
@@ -49,7 +49,7 @@ k_armenia = {
 		holder = 0
 	}
 	#1045 to BYZ
-
+	
 	1199.1.1 = {
 		holder = 223000 #Levon I Rubenid
 	}
@@ -158,7 +158,7 @@ k_old_armenia = {
 
 
 d_mesopotamia = {
-    #Arabic
+	#Arabic
 	820.1.1 = {
 		holder = 159723
 	}
@@ -168,7 +168,7 @@ d_mesopotamia = {
 	863.1.1 = {
 		holder = 159725
 	}
-
+	
 	#Byz
 	965.1.1 = {
 		liege = "e_byzantium"
@@ -179,7 +179,7 @@ d_mesopotamia = {
 	1067.1.1 = {
 		holder = 724
 	}
-
+	
 	#Seljuk
 	1071.8.26 = {
 		liege = "k_persia"
@@ -202,7 +202,7 @@ d_mesopotamia = {
 	1166.1.1 = {
 		holder = 144072
 	}
-
+	
 	#Rum
 	1178.1.1 = {
 		liege = "k_rum"
@@ -222,7 +222,7 @@ d_mesopotamia = {
 	1234.1.1 = {
 		holder = 34255
 	}
-
+	
 	#Ilkhanate
 	1243.1.1 = {
 		liege = "e_ilkhanate"
@@ -298,7 +298,7 @@ c_melitene = {
 		holder = 34242
 	}
 	1204.1.1 = {
-
+	
 		holder = 34243
 	}
 	1232.1.1 = {
@@ -391,7 +391,7 @@ c_theodosiopolis = {
 	1300.1.1 = {
 		holder = 34401
 	}
-
+	
 	1335.1.1 = {
 		liege = "k_eretnid"
 	}
@@ -416,7 +416,7 @@ c_mesopotamia = {
 		liege = "d_mesopotamia"
 	}
 	820.1.1 = {
-	    holder = 159723
+		holder = 159723
 	}
 	855.1.1 = {
 		holder = 159724
@@ -452,7 +452,7 @@ c_mesopotamia = {
 		holder = 34242
 	}
 	1204.1.1 = {
-
+	
 		holder = 34243
 	}
 	1232.1.1 = {
@@ -520,9 +520,9 @@ d_vaspurakan = {
 	862.1.1 = {
 		liege = k_armenian_principality	#For the not-quite-a-kingdom under Ashot I, before he becomes king.
 	}
-
+	
 	#884 Armenia independant from Abbasid
-
+	
 	#Kingdom of Vaspurakan in 908
 	908.1.1 = {
 		holder = 41563	#Gagik I Artsruni
@@ -543,7 +543,7 @@ d_vaspurakan = {
 	1003.1.1 = {
 		holder = 41576	#Hovhannes Senek'erim Artsruni
 	}
-
+	
 	#End of the kingdom of Vaspurakan
 	1021.1.1 = {
 		liege = "e_byzantium"
@@ -551,7 +551,7 @@ d_vaspurakan = {
 	1060.1.1 = {
 		holder = 41585
 	}
-
+	
 	#Battle of Manzikert
 	1071.8.26 = {
 		liege = "k_rum"
@@ -586,7 +586,7 @@ d_vaspurakan = {
 	1225.1.1 = {
 		holder = 34233
 	}
-
+	
 	#placeholders
 	1230.1.1 = {
 		holder = 34398
@@ -620,7 +620,7 @@ d_vaspurakan = {
 	}
 	1316.12.16 = {
 		holder = 478006
-	}
+	}	
 	1335.12.1 = {
 		holder = 125528
 	}
@@ -669,7 +669,7 @@ c_turuberan = {
 		holder = 41560
 	}
 	863.1.1 = {
-	    liege = e_arabia
+		liege = e_arabia
 		holder = 159722
 	}
 	1021.1.1 = {
@@ -747,7 +747,7 @@ c_turuberan = {
 	}
 	1316.12.16 = {
 		holder = 478006
-	}
+	}	
 	1335.12.1 = {
 		holder = 125528
 	}
@@ -874,7 +874,7 @@ c_apahunik = {
 	}
 	1316.12.16 = {
 		holder = 478006
-	}
+	}	
 	1335.12.1 = {
 		holder = 125528
 	}
@@ -997,7 +997,7 @@ c_vaspurakan = {
 	}
 	1316.12.16 = {
 		holder = 478006
-	}
+	}	
 	1335.12.1 = {
 		holder = 125528
 	}
@@ -1068,9 +1068,9 @@ d_greater_armenia = {
 		holder = 41505
 	}
 	#884 Armenia independant from Abbasid
-
+	
 	#Kingdom of Vaspurakan in 908
-
+	
 	890.1.1 = {
 		holder = 41506
 	}
@@ -1092,7 +1092,7 @@ d_greater_armenia = {
 	1020.1.1 = {
 		holder = 41520
 	}
-
+	
 	#1021 end of Vaspurakan
 	1041.1.1 = {
 		holder = 41521
@@ -1100,7 +1100,7 @@ d_greater_armenia = {
 	1041.9.1 = {
 		holder = 41522
 	}
-
+	
 	#
 	1045.1.1 = {
 		holder = 0
@@ -1128,7 +1128,7 @@ d_greater_armenia = {
 c_hayk = {
 	867.1.1 = {	change_development_level = 7 }
 	1066.1.1 = { change_development_level = 10 }
-
+	
 	646.1.1 = {
 		liege = d_greater_armenia
 	}
@@ -1156,7 +1156,7 @@ c_hayk = {
 	1102.1.1 = {
 		holder = 144045
 	}
-
+	
 	#To Georgia
 	1124.4.1 = {
 		holder = 144046
@@ -1196,7 +1196,7 @@ c_hayk = {
 	1300.1.1 = {
 		holder = 34401
 	}
-
+	
 
 }
 
@@ -1229,7 +1229,7 @@ c_bagrewand = {
 	1102.1.1 = {
 		holder = 144045
 	}
-
+	
 	#To Georgia
 	1124.1.1 = {
 		holder = 144046
@@ -1300,7 +1300,7 @@ c_vanand = {
 	1102.1.1 = {
 		holder = 144045
 	}
-
+	
 	#To Georgia
 	1124.4.1 = {
 		holder = 144046
@@ -1339,7 +1339,7 @@ c_vanand = {
 	1300.1.1 = {
 		holder = 34401
 	}
-
+	
 
 }
 
@@ -1357,7 +1357,7 @@ c_khachen = {
 	855.1.1 = {
 		holder = 159976 #Smbat, grandson of Sahak Sahl Smbatean
 	}
-
+	
 	#Vassal state of Bagratid Armenia
 	884.1.1 = {
 		liege = k_armenia
@@ -1381,12 +1381,12 @@ c_khachen = {
 	1030.1.1 = {
 		holder = 159239	#Grigor, son of Smbat
 	}
-
+	
 	#1045 : Bagratid Armenia dissolution
 	1045.1.1 = {
 		liege = d_greater_armenia
 	}
-
+	
 	#1064 : Seljuk take Ani/Armenia
 	1064.1.1 = {
 		liege = e_persia
@@ -1397,7 +1397,7 @@ c_khachen = {
 	1094.1.1 = {
 		holder = 159235	#Grigor, son of Senekerim
 	}
-
+	
 	#1124 : Goes to Georgia
 	1124.1.1 = {
 		liege = k_georgia
@@ -1408,11 +1408,12 @@ c_khachen = {
 	1160.1.1 = {
 		holder = 159215	#Mamkan, son of Senekerim
 	}
-
+	
 	#1261 : End of KoA
 }
 
-c_tashir = {
+#mymod - start
+c_tashir-dzoraget = {
 	#VIIth century onwards : Arab rule
 	654.1.1 = {
 		liege = e_arabia
@@ -1425,7 +1426,7 @@ c_tashir = {
 	855.1.1 = {
 		holder = 159976 #Smbat, grandson of Sahak Sahl Smbatean
 	}
-
+	
 	#Vassal state of Bagratid Armenia
 	884.1.1 = {
 		liege = k_armenia
@@ -1449,12 +1450,12 @@ c_tashir = {
 	1030.1.1 = {
 		holder = 159239	#Grigor, son of Smbat
 	}
-
+	
 	#1045 : Bagratid Armenia dissolution
 	1045.1.1 = {
 		liege = d_greater_armenia
 	}
-
+	
 	#1064 : Seljuk take Ani/Armenia
 	1064.1.1 = {
 		liege = e_persia
@@ -1465,7 +1466,7 @@ c_tashir = {
 	1094.1.1 = {
 		holder = 159235	#Grigor, son of Senekerim
 	}
-
+	
 	#1124 : Goes to Georgia
 	1124.1.1 = {
 		liege = k_georgia
@@ -1476,9 +1477,11 @@ c_tashir = {
 	1160.1.1 = {
 		holder = 159215	#Mamkan, son of Senekerim
 	}
-
+	
 	#1261 : End of KoA
 }
+#mymod - end
+
 
 c_suenik = {
 	646.1.1 = {
@@ -1528,7 +1531,7 @@ c_suenik = {
 	1072.11.1 = {
 		holder = 3042
 	}
-
+	
 	1092.11.1 = {
 		holder = 144012
 	}
@@ -1541,7 +1544,7 @@ c_suenik = {
 	1118.4.18 = {
 		holder = 144015
 	}
-
+	
 	#To Georgia
 	1124.4.1 = {
 		holder = 159210
@@ -1583,7 +1586,7 @@ c_suenik = {
 	}
 	1316.12.16 = {
 		holder = 478006
-	}
+	}	
 	1318.1.1 = {
 		holder = 478006
 	}
@@ -1596,7 +1599,7 @@ c_suenik = {
 c_dvin = {
 	867.1.1 = {	change_development_level = 7 }
 	1066.1.1 = { change_development_level = 10 }
-
+	
 	646.1.1 = {
 		liege = d_greater_armenia
 		holder = 145996
@@ -1713,7 +1716,7 @@ c_dvin = {
 	1118.1.1 = {
 		holder = 41604
 	}
-
+	
 	#To Georgia
 	1124.1.1 = {
 		liege = "k_georgia"
@@ -1771,7 +1774,7 @@ c_dvin = {
 	}
 	1316.12.16 = {
 		holder = 478006
-	}
+	}	
 	1335.12.1 = {
 		holder = 125528
 	}
@@ -1783,3 +1786,4 @@ c_dvin = {
 	}
 
 }
+

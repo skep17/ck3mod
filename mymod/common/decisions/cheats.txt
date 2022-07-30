@@ -13,36 +13,6 @@ titles_and_vassals_boom = {
 	ai_check_interval = 0
 }
 
-invite_knight = {
-    title = "Invite Impressive Knight"
-
-    is_shown = {
-		is_ai = no
-	}
-
-    effect = {
-        create_character = {
-			age = 18
-			gender = male
-			health = 5
-			fertility = 0.5
-			employer = root
-			faith = root.faith
-			culture = root.culture
-			dynasty = none
-			martial = 5
-			prowess = 15
-			diplomacy = 5
-			stewardship = 5
-			intrigue = 5
-			learning = 5
-		}
-    }
-
-    ai_will_do = 0
-	ai_check_interval = 0
-}
-
 release_stress = {
     title = "Release Stress"
 
@@ -55,5 +25,309 @@ release_stress = {
     }
 
     ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_menu_open = {
+	title = "Open invitation menu"
+
+	is_shown = {
+		is_ai = no
+		NOT = {
+			has_variable = invite_menu_open_var
+		}
+	}
+
+	effect = {
+		root = {
+			set_variable = {
+				name = invite_menu_open_var
+				value = 1
+			}
+		}
+	}
+
+	ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_menu_close = {
+	title = "Close invitation menu"
+
+	is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+	}
+
+	effect = {
+		root = {
+			remove_variable = invite_menu_open_var
+		}
+	}
+
+	ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_knight = {
+    title = "Invite Impressive Knight"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+	}
+
+    effect = {
+        create_character = {
+			age = 25
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = none
+			prowess = 15
+			trait = education_martial_2
+			trait = physique_good_3
+			trait = education_martial_prowess_4
+			trait = blademaster_3
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_chancellor = {
+    title = "Invite Impressive Chancellor"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+	}
+
+    effect = {
+        create_character = {
+			age = 25
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = generate
+			diplomacy = 20
+			trait = education_diplomacy_4
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_steward = {
+    title = "Invite Impressive Steward"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+	}
+
+    effect = {
+        create_character = {
+			age = 25
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = generate
+			stewardship = 20
+			trait = education_stewardship_4
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_marshal = {
+    title = "Invite Impressive Marshal"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+	}
+
+    effect = {
+        create_character = {
+			age = 25
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = generate
+			martial = 20
+			trait = education_martial_4
+			trait = logistician
+			trait = military_engineer
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_spymaster = {
+    title = "Invite Impressive Spymaster"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+	}
+
+    effect = {
+        create_character = {
+			age = 25
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = generate
+			intrigue = 20
+			trait = education_intrigue_4
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_physician = {
+    title = "Invite Impressive Physician"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+	}
+
+    effect = {
+        create_character = {
+			age = 25
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = none
+			learning = 20
+			trait = physician_3
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_female = {
+    title = "Invite Impressive Female"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+	}
+
+    effect = {
+        create_character = {
+			age = 18
+			gender = female
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = generate
+			trait = intellect_good_3
+			trait = beauty_good_3
+			trait = fecund
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_local_dynasty_on = {
+	title = "Invite locals with dynasties"
+
+	is_shown = {
+		is_ai = no
+		NOT = {
+			has_variable = invite_local_dynasty_var
+		}
+	}
+
+	effect = {
+		root = {
+			set_variable = {
+				name = invite_local_dynasty_var
+				value = 1
+			}
+		}
+	}
+
+	ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_local_dynasty_off = {
+	title = "Invite locals without dynasties"
+
+	is_shown = {
+		is_ai = no
+		has_variable = invite_local_dynasty_var
+	}
+
+	effect = {
+		root = {
+			remove_variable = invite_local_dynasty_var
+		}
+	}
+
+	ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_local_religion_on = {
+	title = "Invite locals with your religion"
+
+	is_shown = {
+		is_ai = no
+		NOT = {
+			has_variable = invite_local_religion_var
+		}
+	}
+
+	effect = {
+		root = {
+			set_variable = {
+				name = invite_local_religion_var
+				value = 1
+			}
+		}
+	}
+
+	ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_local_religion_off = {
+	title = "Invite locals with local religion"
+
+	is_shown = {
+		is_ai = no
+		has_variable = invite_local_religion_var
+	}
+
+	effect = {
+		root = {
+			remove_variable = invite_local_religion_var
+		}
+	}
+
+	ai_will_do = 0
 	ai_check_interval = 0
 }

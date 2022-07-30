@@ -1,6 +1,4 @@
 titleman = {
-	index = 278
-
 	domain_limit = 900
 	vassal_limit = 900
 

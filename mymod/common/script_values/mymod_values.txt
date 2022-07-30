@@ -1,0 +1,2 @@
+﻿
+max_contract_changes = 7
