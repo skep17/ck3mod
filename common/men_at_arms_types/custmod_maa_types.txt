@@ -26,15 +26,18 @@ monaspa = {
 	}
 	
 	can_recruit = {
-		culture = { has_cultural_parameter = unlock_maa_monaspa }
+		valid_for_maa_trigger = { PARAMETER = unlock_maa_monaspa }
+		NOT = {
+			culture = { has_cultural_parameter = strength_in_numbers_heavy_maa_ban }
+		}
 	}
 
 	buy_cost = { gold = monaspa_recruitment_cost }
 	low_maintenance_cost = { gold = monaspa_low_maint_cost }
 	high_maintenance_cost = { gold = monaspa_high_maint_cost }
+	provision_cost = @provisions_cost_cavalry_moderate
 	
 	stack = 50
 	ai_quality = { value = @cultural_maa_extra_ai_score }
-	icon = heavy_cavalry
+	icon = monaspa
 }
-

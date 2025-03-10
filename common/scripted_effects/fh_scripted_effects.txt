@@ -6,7 +6,6 @@ build_up_county_effect = {
 			has_building = castle_01
 			culture = {
 				has_innovation = innovation_battlements
-
 			}
 		}
 		add_building = castle_02
@@ -15,7 +14,7 @@ build_up_county_effect = {
 		limit = {
 			has_building = castle_02
 			culture = {
-			has_innovation = innovation_hoardings
+				has_innovation = innovation_hoardings
 			}
 		}
 		add_building = castle_03
@@ -24,7 +23,7 @@ build_up_county_effect = {
 		limit = {
 			has_building = castle_03
 			culture = {
-			has_innovation = innovation_machicolations
+				has_innovation = innovation_machicolations
 			}
 		}
 		add_building = castle_04
@@ -35,7 +34,7 @@ build_up_county_effect = {
 		limit = {
 			has_building = city_01
 			culture = {
-			has_innovation = innovation_manorialism
+				has_innovation = innovation_manorialism
 			}
 		}
 		add_building = city_02
@@ -44,7 +43,7 @@ build_up_county_effect = {
 		limit = {
 			has_building = city_02
 			culture = {
-			has_innovation = innovation_windmills
+				has_innovation = innovation_windmills
 			}
 		}
 		add_building = city_03
@@ -53,7 +52,7 @@ build_up_county_effect = {
 		limit = {
 			has_building = city_03
 			culture = {
-			has_innovation = innovation_cranes
+				has_innovation = innovation_cranes
 			}
 		}
 		add_building = city_04
@@ -64,7 +63,7 @@ build_up_county_effect = {
 		limit = {
 			has_building = temple_01
 			culture = {
-			has_innovation = innovation_manorialism
+				has_innovation = innovation_manorialism
 			}
 		}
 		add_building = temple_02
@@ -73,7 +72,7 @@ build_up_county_effect = {
 		limit = {
 			has_building = temple_02
 			culture = {
-			has_innovation = innovation_windmills
+				has_innovation = innovation_windmills
 			}
 		}
 		add_building = city_03
@@ -82,7 +81,7 @@ build_up_county_effect = {
 		limit = {
 			has_building = temple_03
 			culture = {
-			has_innovation = innovation_cranes
+				has_innovation = innovation_cranes
 			}
 		}
 		add_building = temple_04
@@ -91,6 +90,9 @@ build_up_county_effect = {
 	#guild halls
 	if = {
 		limit = {
+			culture = {
+				has_innovation = innovation_cranes
+			}
 			has_building_or_higher = city_04
 			NOT = {
 				has_building_or_higher_or_higher = guild_halls_08
@@ -98,16 +100,19 @@ build_up_county_effect = {
 		}
 		add_building = guild_halls_08
 	}
-	if = {
+	else_if = {
 		limit = {
 			has_building_or_higher = city_03
+			culture = {
+				has_innovation = innovation_guilds
+			}
 			NOT = {
 				has_building_or_higher = guild_halls_06
 			}
 		}
 		add_building = guild_halls_06
 	}
-	if = {
+	else_if = {
 		limit = {
 			has_building_or_higher = city_02
 			NOT = {
@@ -116,7 +121,7 @@ build_up_county_effect = {
 		}
 		add_building = guild_halls_04
 	}
-	if = {
+	else_if = {
 		limit = {
 			has_building_or_higher = city_01
 			NOT = {
@@ -126,302 +131,507 @@ build_up_county_effect = {
 		add_building = guild_halls_02
 	}
 
-	#monasteries
+	#Scriptorium
 	if = {
 		limit = {
 			has_building_or_higher = temple_04
+			culture = {
+				has_innovation = innovation_cranes
+			}
+			NOT = {
+				has_building_or_higher = scriptorium_08
+			}
+		}
+		add_building = scriptorium_08
+	}
+	else_if = {
+		limit = {
+			has_building_or_higher = temple_03
+			culture = {
+				has_innovation = innovation_windmills
+			}
+			NOT = {
+				has_building_or_higher = scriptorium_06
+			}
+		}
+		add_building = scriptorium_06
+	}
+	else_if = {
+		limit = {
+			has_building_or_higher = temple_02
+			culture = {
+				has_innovation = innovation_manorialism
+			}
+			NOT = {
+				has_building_or_higher = scriptorium_04
+			}
+		}
+		add_building = scriptorium_04
+	}
+	else_if = {
+		limit = {
+			has_building_or_higher = temple_01
+			culture = {
+				has_innovation = innovation_city_planning
+			}
+			NOT = {
+				has_building_or_higher = scriptorium_02
+			}
+		}
+		add_building = scriptorium_02
+	}
+	else_if = {
+		limit = {
+			has_building_or_higher = temple_01
+			culture = {
+				has_innovation = innovation_city_planning
+			}
+			NOT = {
+				has_building_or_higher = scriptorium_01
+			}
+		}
+		add_building = scriptorium_01
+	}
+
+	#Monastic School
+	if = {
+		limit = {
+			has_building_or_higher = temple_04
+			culture = {
+				has_innovation = innovation_cranes
+			}
 			NOT = {
 				has_building_or_higher = monastic_schools_08
 			}
 		}
 		add_building = monastic_schools_08
 	}
-	if = {
+	else_if = {
 		limit = {
 			has_building_or_higher = temple_03
+			culture = {
+				has_innovation = innovation_windmills
+			}
 			NOT = {
 				has_building_or_higher = monastic_schools_06
 			}
 		}
 		add_building = monastic_schools_06
 	}
-	if = {
+	else_if = {
 		limit = {
 			has_building_or_higher = temple_02
+			culture = {
+				has_innovation = innovation_manorialism
+			}
 			NOT = {
 				has_building_or_higher = monastic_schools_04
 			}
 		}
 		add_building = monastic_schools_04
 	}
-	if = {
+	else_if = {
 		limit = {
 			has_building_or_higher = temple_01
+			culture = {
+				OR = {
+					has_innovation = innovation_city_planning
+					has_cultural_parameter = next_level_monasteries
+				}
+			}
 			NOT = {
 				has_building_or_higher = monastic_schools_02
 			}
 		}
 		add_building = monastic_schools_02
 	}
+	else_if = {
+		limit = {
+			has_building_or_higher = temple_01
+			NOT = {
+				has_building_or_higher = monastic_schools_01
+			}
+		}
+		add_building = monastic_schools_01
+	}
+
+	#Breweries
+	if = {
+		limit = {
+			building_breweries_requirement = { NUMBER = 04 }
+			culture = {
+				has_innovation = innovation_cranes
+			}
+			NOT = {
+				has_building_or_higher = breweries_08
+			}
+		}
+		add_building = breweries_08
+	}
+	else_if = {
+		limit = {
+			building_breweries_requirement = { NUMBER = 03 }
+			culture = {
+				has_innovation = innovation_windmills
+			}
+			NOT = {
+				has_building_or_higher = breweries_06
+			}
+		}
+		add_building = breweries_06
+	}
+	else_if = {
+		limit = {
+			building_breweries_requirement = { NUMBER = 02 }
+			culture = {
+				has_innovation = innovation_manorialism
+			}
+			NOT = {
+				has_building_or_higher = breweries_04
+			}
+		}
+		add_building = breweries_04
+	}
+	else_if = {
+		limit = {
+			building_breweries_requirement = { NUMBER = 01 }
+			culture = {
+				has_innovation = innovation_city_planning
+			}
+			NOT = {
+				has_building_or_higher = breweries_02
+			}
+		}
+		add_building = breweries_02
+	}
+	else_if = {
+		limit = {
+			building_breweries_requirement = { NUMBER = 01 }
+			NOT = {
+				has_building_or_higher = breweries_01
+			}
+		}
+		add_building = breweries_01
+	}
+
+	#Hospices
+	if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_cranes
+			}
+			NOT = {
+				has_building_or_higher = hospices_08
+			}
+		}
+		add_building = hospices_08
+	}
+	else_if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_windmills
+			}
+			NOT = {
+				has_building_or_higher = hospices_06
+			}
+		}
+		add_building = hospices_06
+	}
+	else_if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_manorialism
+			}
+			NOT = {
+				has_building_or_higher = hospices_04
+			}
+		}
+		add_building = hospices_04
+	}
+	else_if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_city_planning
+			}
+			NOT = {
+				has_building_or_higher = hospices_02
+			}
+		}
+		add_building = hospices_02
+	}
+	else_if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = hospices_01
+			}
+		}
+		add_building = hospices_01
+	}
+
+	#caravanserai
+	if = {
+		limit = {
+			building_caravanserai_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_cranes
+			}
+			NOT = {
+				has_building_or_higher = caravanserai_08
+			}
+		}
+		add_building = caravanserai_08
+	}
+	else_if = {
+		limit = {
+			building_caravanserai_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_cranes
+			}
+			NOT = {
+				has_building_or_higher = caravanserai_06
+			}
+		}
+		add_building = caravanserai_06
+	}
+	else_if = {
+		limit = {
+			building_caravanserai_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_guilds
+			}
+			NOT = {
+				has_building_or_higher = caravanserai_05
+			}
+		}
+		add_building = caravanserai_05
+	}
+	else_if = {
+		limit = {
+			building_caravanserai_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_guilds
+			}
+			NOT = {
+				has_building_or_higher = caravanserai_04
+			}
+		}
+		add_building = caravanserai_04
+	}
+	else_if = {
+		limit = {
+			building_caravanserai_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_guilds
+			}
+			NOT = {
+				has_building_or_higher = caravanserai_02
+			}
+		}
+		add_building = caravanserai_02
+	}
+
+	#watermills
+	if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			building_watermills_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_cranes
+			}
+			NOT = {
+				has_building_or_higher = watermills_08
+			}
+		}
+		add_building = watermills_08
+	}
+	else_if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			building_watermills_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_cranes
+			}
+			NOT = {
+				has_building_or_higher = watermills_06
+			}
+		}
+		add_building = watermills_06
+	}
+	else_if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			building_watermills_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_windmills
+			}
+			NOT = {
+				has_building_or_higher = watermills_05
+			}
+		}
+		add_building = watermills_05
+	}
+	else_if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			building_watermills_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_windmills
+			}
+			NOT = {
+				has_building_or_higher = watermills_04
+			}
+		}
+		add_building = watermills_04
+	}
+	else_if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			building_watermills_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_windmills
+			}
+			NOT = {
+				has_building_or_higher = watermills_02
+			}
+		}
+		add_building = watermills_02
+	}
+
+	#Windmills
+	if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			building_windmills_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_cranes
+			}
+			NOT = {
+				has_building_or_higher = windmills_08
+			}
+		}
+		add_building = windmills_08
+	}
+	else_if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			building_windmills_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_cranes
+			}
+			NOT = {
+				has_building_or_higher = windmills_06
+			}
+		}
+		add_building = windmills_06
+	}
+	else_if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			building_windmills_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_windmills
+			}
+			NOT = {
+				has_building_or_higher = windmills_05
+			}
+		}
+		add_building = windmills_05
+	}
+	else_if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			building_windmills_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_windmills
+			}
+			NOT = {
+				has_building_or_higher = windmills_04
+			}
+		}
+		add_building = windmills_04
+	}
+	else_if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			building_windmills_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_windmills
+			}
+			NOT = {
+				has_building_or_higher = windmills_02
+			}
+		}
+		add_building = windmills_02
+	}
 
 	#tradeport
 	if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
+			culture = {
+				has_innovation = innovation_cranes
 			}
+			building_common_tradeport_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
 			NOT = {
 				has_building_or_higher = common_tradeport_08
-			}
-			is_coastal = yes
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_cranes
 			}
 		}
 		add_building = common_tradeport_08
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
+			culture = {
+				has_innovation = innovation_guilds
 			}
+			building_common_tradeport_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
 			NOT = {
 				has_building_or_higher = common_tradeport_06
-			}
-			is_coastal = yes
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
 			}
 		}
 		add_building = common_tradeport_06
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
+			culture = {
+				has_innovation = innovation_manorialism
 			}
+			building_common_tradeport_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
 			NOT = {
 				has_building_or_higher = common_tradeport_04
-			}
-			is_coastal = yes
-			culture = {
-			has_innovation = innovation_manorialism
 			}
 		}
 		add_building = common_tradeport_04
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			building_common_tradeport_requirement_terrain = yes
 			NOT = {
 				has_building_or_higher = common_tradeport_02
 			}
-			is_coastal = yes
 		}
 		add_building = common_tradeport_02
-	}
-
-	#military camps
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = drylands
-				terrain = desert
-				terrain = oasis
-				terrain = floodplains
-				terrain = steppe
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = wetlands
-				terrain = forest
-				terrain = taiga
-				terrain = jungle
-				terrain = hills
-			}
-			NOT = {
-				has_building_or_higher = military_camps_08
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			has_innovation = innovation_royal_armory
-			}
-		}
-		add_building = military_camps_08
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = drylands
-				terrain = desert
-				terrain = oasis
-				terrain = floodplains
-				terrain = steppe
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = wetlands
-				terrain = forest
-				terrain = taiga
-				terrain = jungle
-				terrain = hills
-			}
-			NOT = {
-				has_building_or_higher = military_camps_06
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			}
-		}
-		add_building = military_camps_06
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = drylands
-				terrain = desert
-				terrain = oasis
-				terrain = floodplains
-				terrain = steppe
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = wetlands
-				terrain = forest
-				terrain = taiga
-				terrain = jungle
-				terrain = hills
-			}
-			NOT = {
-				has_building_or_higher = military_camps_04
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			}
-		}
-		add_building = military_camps_04
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = drylands
-				terrain = desert
-				terrain = oasis
-				terrain = floodplains
-				terrain = steppe
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = wetlands
-				terrain = forest
-				terrain = taiga
-				terrain = jungle
-				terrain = hills
-			}
-			NOT = {
-				has_building_or_higher = military_camps_02
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			}
-		}
-		add_building = military_camps_02
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = drylands
-				terrain = desert
-				terrain = oasis
-				terrain = floodplains
-				terrain = steppe
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = wetlands
-				terrain = forest
-				terrain = taiga
-				terrain = jungle
-				terrain = hills
-			}
-			NOT = {
-				has_building_or_higher = military_camps_01
-			}
-		}
-		add_building = military_camps_01
 	}
 
 	#pastures
 	if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = steppe
-				terrain = desert
-				terrain = drylands
-				terrain = oasis
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = hills
-				terrain = floodplains
-				AND = {
-					terrain = jungle
-					NOT = { geographical_region = world_innovation_elephants }
-				}
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			building_pastures_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_cranes
 			}
 			NOT = {
 				has_building_or_higher = pastures_08
@@ -429,28 +639,12 @@ build_up_county_effect = {
 		}
 		add_building = pastures_08
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = steppe
-				terrain = desert
-				terrain = drylands
-				terrain = oasis
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = hills
-				terrain = floodplains
-				AND = {
-					terrain = jungle
-					NOT = { geographical_region = world_innovation_elephants }
-				}
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			building_pastures_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_guilds
 			}
 			NOT = {
 				has_building_or_higher = pastures_06
@@ -458,28 +652,12 @@ build_up_county_effect = {
 		}
 		add_building = pastures_06
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = steppe
-				terrain = desert
-				terrain = drylands
-				terrain = oasis
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = hills
-				terrain = floodplains
-				AND = {
-					terrain = jungle
-					NOT = { geographical_region = world_innovation_elephants }
-				}
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			building_pastures_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_manorialism
 			}
 			NOT = {
 				has_building_or_higher = pastures_04
@@ -487,28 +665,12 @@ build_up_county_effect = {
 		}
 		add_building = pastures_04
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = steppe
-				terrain = desert
-				terrain = drylands
-				terrain = oasis
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = hills
-				terrain = floodplains
-				AND = {
-					terrain = jungle
-					NOT = { geographical_region = world_innovation_elephants }
-				}
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			building_pastures_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_crop_rotation
 			}
 			NOT = {
 				has_building_or_higher = pastures_02
@@ -516,135 +678,74 @@ build_up_county_effect = {
 		}
 		add_building = pastures_02
 	}
+	else_if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			building_pastures_requirement_terrain = yes
+			NOT = {
+				has_building_or_higher = pastures_01
+			}
+		}
+		add_building = pastures_01
+	}
 
 	#hunting grounds
 	if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
-			}
-			OR = {
-				terrain = plains
-				terrain = drylands
-				terrain = steppe
-				terrain = hills
-				terrain = taiga
-				terrain = forest
-				terrain = jungle
-				terrain = wetlands
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			building_hunting_grounds_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_cranes
 			}
 			NOT = {
 				has_building_or_higher = hunting_grounds_08
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
-			has_innovation = innovation_cranes
-			}
 		}
 		add_building = hunting_grounds_08
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
-			}
-			OR = {
-				terrain = plains
-				terrain = drylands
-				terrain = steppe
-				terrain = hills
-				terrain = taiga
-				terrain = forest
-				terrain = jungle
-				terrain = wetlands
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			building_hunting_grounds_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_guilds
 			}
 			NOT = {
 				has_building_or_higher = hunting_grounds_06
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = hunting_grounds_06
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
-			}
-			OR = {
-				terrain = plains
-				terrain = drylands
-				terrain = steppe
-				terrain = hills
-				terrain = taiga
-				terrain = forest
-				terrain = jungle
-				terrain = wetlands
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			building_hunting_grounds_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_manorialism
 			}
 			NOT = {
 				has_building_or_higher = hunting_grounds_04
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = hunting_grounds_04
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = plains
-				terrain = drylands
-				terrain = steppe
-				terrain = hills
-				terrain = taiga
-				terrain = forest
-				terrain = jungle
-				terrain = wetlands
+			building_hunting_grounds_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_crop_rotation
 			}
 			NOT = {
 				has_building_or_higher = hunting_grounds_02
 			}
-			culture = {
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = hunting_grounds_02
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = plains
-				terrain = drylands
-				terrain = steppe
-				terrain = hills
-				terrain = taiga
-				terrain = forest
-				terrain = jungle
-				terrain = wetlands
-			}
+			building_hunting_grounds_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
 			NOT = {
 				has_building_or_higher = hunting_grounds_01
 			}
@@ -655,101 +756,60 @@ build_up_county_effect = {
 	#orchards
 	if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
-			}
-			OR = {
-				terrain = floodplains
-				terrain = oasis
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			building_orchards_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_cranes
 			}
 			NOT = {
 				has_building_or_higher = orchards_08
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
-			has_innovation = innovation_cranes
-			}
 		}
 		add_building = orchards_08
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
-			}
-			OR = {
-				terrain = floodplains
-				terrain = oasis
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			building_orchards_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_guilds
 			}
 			NOT = {
 				has_building_or_higher = orchards_06
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = orchards_06
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
-			}
-			OR = {
-				terrain = floodplains
-				terrain = oasis
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			building_orchards_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_manorialism
 			}
 			NOT = {
 				has_building_or_higher = orchards_04
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = orchards_04
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = floodplains
-				terrain = oasis
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			building_orchards_requirement_terrain = yes
+			culture = {
+				has_innovation = innovation_crop_rotation
 			}
 			NOT = {
 				has_building_or_higher = orchards_02
 			}
-			culture = {
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = orchards_02
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = floodplains
-				terrain = oasis
-			}
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			building_orchards_requirement_terrain = yes
 			NOT = {
 				has_building_or_higher = orchards_01
 			}
@@ -760,86 +820,60 @@ build_up_county_effect = {
 	#farm estates
 	if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
+			building_farm_estates_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_cranes
 			}
-			terrain = farmlands
 			NOT = {
 				has_building_or_higher = farm_estates_08
-			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
-			has_innovation = innovation_cranes
 			}
 		}
 		add_building = farm_estates_08
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
+			building_farm_estates_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_guilds
 			}
-			terrain = farmlands
 			NOT = {
 				has_building_or_higher = farm_estates_06
-			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
 			}
 		}
 		add_building = farm_estates_06
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
+			building_farm_estates_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_manorialism
 			}
-			terrain = farmlands
 			NOT = {
 				has_building_or_higher = farm_estates_04
-			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_crop_rotation
 			}
 		}
 		add_building = farm_estates_04
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
+			building_farm_estates_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_crop_rotation
 			}
-			terrain = farmlands
 			NOT = {
 				has_building_or_higher = farm_estates_02
-			}
-			culture = {
-			has_innovation = innovation_crop_rotation
 			}
 		}
 		add_building = farm_estates_02
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			terrain = farmlands
+			building_farm_estates_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
 			NOT = {
 				has_building_or_higher = farm_estates_01
 			}
@@ -847,446 +881,63 @@ build_up_county_effect = {
 		add_building = farm_estates_01
 	}
 
-	#regimental grounds
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
-			}
-			OR = {
-				terrain = floodplains
-				terrain = farmlands
-			}
-			NOT = {
-				has_building_or_higher = regimental_grounds_08
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			has_innovation = innovation_royal_armory
-			}
-		}
-		add_building = regimental_grounds_08
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
-			}
-			OR = {
-				terrain = floodplains
-				terrain = farmlands
-			}
-			NOT = {
-				has_building_or_higher = regimental_grounds_06
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			}
-		}
-		add_building = regimental_grounds_06
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
-			}
-			OR = {
-				terrain = floodplains
-				terrain = farmlands
-			}
-			NOT = {
-				has_building_or_higher = regimental_grounds_04
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			}
-		}
-		add_building = regimental_grounds_04
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = floodplains
-				terrain = farmlands
-			}
-			NOT = {
-				has_building_or_higher = regimental_grounds_01
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			}
-		}
-		add_building = regimental_grounds_02
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = floodplains
-				terrain = farmlands
-			}
-			NOT = {
-				has_building_or_higher = regimental_grounds_01
-			}
-		}
-		add_building = regimental_grounds_01
-	}
-
-	#ramparts
-	if = {
-		limit = {
-			has_building_or_higher = castle_04
-			OR = {
-				terrain = taiga
-				terrain = forest
-			}
-			NOT = {
-				has_building_or_higher = ramparts_08
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			has_innovation = innovation_royal_armory
-			}
-		}
-		add_building = ramparts_08
-	}
-	if = {
-		limit = {
-			has_building_or_higher = castle_03
-			OR = {
-				terrain = taiga
-				terrain = forest
-			}
-			NOT = {
-				has_building_or_higher = ramparts_06
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			}
-		}
-		add_building = ramparts_06
-	}
-	if = {
-		limit = {
-			has_building_or_higher = castle_02
-			OR = {
-				terrain = taiga
-				terrain = forest
-			}
-			NOT = {
-				has_building_or_higher = ramparts_04
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			}
-		}
-		add_building = ramparts_04
-	}
-	if = {
-		limit = {
-			has_building_or_higher = castle_01
-			OR = {
-				terrain = taiga
-				terrain = forest
-			}
-			NOT = {
-				has_building_or_higher = ramparts_02
-			}
-		}
-		add_building = ramparts_02
-	}
-
-	#curtain walls
-	if = {
-		limit = {
-			has_building_or_higher = castle_04
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = wetlands
-			}
-			NOT = {
-				has_building_or_higher = curtain_walls_08
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			has_innovation = innovation_royal_armory
-			}
-		}
-		add_building = curtain_walls_08
-	}
-	if = {
-		limit = {
-			has_building_or_higher = castle_03
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = wetlands
-			}
-			NOT = {
-				has_building_or_higher = curtain_walls_06
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			}
-		}
-		add_building = curtain_walls_06
-	}
-	if = {
-		limit = {
-			has_building_or_higher = castle_02
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = wetlands
-			}
-			NOT = {
-				has_building_or_higher = curtain_walls_04
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			}
-		}
-		add_building = curtain_walls_04
-	}
-	if = {
-		limit = {
-			has_building_or_higher = castle_01
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = wetlands
-			}
-			NOT = {
-				has_building_or_higher = curtain_walls_02
-			}
-		}
-		add_building = curtain_walls_02
-	}
-
-	#watchtowers
-	if = {
-		limit = {
-			has_building_or_higher = castle_04
-			OR = {
-				terrain = desert
-				terrain = drylands
-				terrain = oasis
-				terrain = floodplains
-				terrain = jungle
-				terrain = steppe
-			}
-			NOT = {
-				has_building_or_higher = watchtowers_08
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			has_innovation = innovation_royal_armory
-			}
-		}
-		add_building = watchtowers_08
-	}
-	if = {
-		limit = {
-			has_building_or_higher = castle_03
-			OR = {
-				terrain = desert
-				terrain = drylands
-				terrain = oasis
-				terrain = floodplains
-				terrain = jungle
-				terrain = steppe
-			}
-			NOT = {
-				has_building_or_higher = watchtowers_06
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			}
-		}
-		add_building = watchtowers_06
-	}
-	if = {
-		limit = {
-			has_building_or_higher = castle_02
-			OR = {
-				terrain = desert
-				terrain = drylands
-				terrain = oasis
-				terrain = floodplains
-				terrain = jungle
-				terrain = steppe
-			}
-			NOT = {
-				has_building_or_higher = watchtowers_04
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			}
-		}
-		add_building = watchtowers_04
-	}
-	if = {
-		limit = {
-			has_building_or_higher = castle_01
-			OR = {
-				terrain = desert
-				terrain = drylands
-				terrain = oasis
-				terrain = floodplains
-				terrain = jungle
-				terrain = steppe
-			}
-			NOT = {
-				has_building_or_higher = watchtowers_02
-			}
-		}
-		add_building = watchtowers_02
-	}
-
 	#cereal fields
 	if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = drylands
-				terrain = floodplains
+			building_cereal_fields_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_cranes
 			}
 			NOT = {
 				has_building_or_higher = cereal_fields_08
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
-			has_innovation = innovation_cranes
-			}
 		}
 		add_building = cereal_fields_08
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = drylands
-				terrain = floodplains
+			building_cereal_fields_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_guilds
 			}
 			NOT = {
 				has_building_or_higher = cereal_fields_06
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = cereal_fields_06
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = drylands
-				terrain = floodplains
+			building_cereal_fields_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_manorialism
 			}
 			NOT = {
 				has_building_or_higher = cereal_fields_04
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = cereal_fields_04
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = drylands
-				terrain = floodplains
+			building_cereal_fields_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_crop_rotation
 			}
 			NOT = {
 				has_building_or_higher = cereal_fields_02
 			}
-			culture = {
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = cereal_fields_02
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = drylands
-				terrain = floodplains
-			}
+			building_cereal_fields_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
 			NOT = {
 				has_building_or_higher = cereal_fields_01
 			}
@@ -1294,504 +945,63 @@ build_up_county_effect = {
 		add_building = cereal_fields_01
 	}
 
-	#outposts
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
-			}
-			OR = {
-				terrain = steppe
-				terrain = wetlands
-				terrain = taiga
-				terrain = forest
-				terrain = jungle
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = desert
-			}
-			NOT = {
-				has_building_or_higher = outposts_08
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			has_innovation = innovation_royal_armory
-			}
-		}
-		add_building = outposts_08
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
-			}
-			OR = {
-				terrain = steppe
-				terrain = wetlands
-				terrain = taiga
-				terrain = forest
-				terrain = jungle
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = desert
-			}
-			NOT = {
-				has_building_or_higher = outposts_06
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			}
-		}
-		add_building = outposts_06
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
-			}
-			OR = {
-				terrain = steppe
-				terrain = wetlands
-				terrain = taiga
-				terrain = forest
-				terrain = jungle
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = desert
-			}
-			NOT = {
-				has_building_or_higher = outposts_04
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			}
-		}
-		add_building = outposts_04
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = steppe
-				terrain = wetlands
-				terrain = taiga
-				terrain = forest
-				terrain = jungle
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = desert
-			}
-			NOT = {
-				has_building_or_higher = outposts_02
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			}
-		}
-		add_building = outposts_02
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = steppe
-				terrain = wetlands
-				terrain = taiga
-				terrain = forest
-				terrain = jungle
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = desert
-			}
-			NOT = {
-				has_building_or_higher = outposts_01
-			}
-		}
-		add_building = outposts_01
-	}
-
-	#barracks
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = drylands
-				terrain = hills
-				terrain = mountains
-				terrain = forest
-				terrain = taiga
-				terrain = jungle
-				terrain = wetlands
-				terrain = steppe
-			}
-			NOT = {
-				has_building_or_higher = barracks_08
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			has_innovation = innovation_royal_armory
-			}
-		}
-		add_building = barracks_08
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = drylands
-				terrain = hills
-				terrain = mountains
-				terrain = forest
-				terrain = taiga
-				terrain = jungle
-				terrain = wetlands
-				terrain = steppe
-			}
-			NOT = {
-				has_building_or_higher = barracks_06
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			}
-		}
-		add_building = barracks_06
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = drylands
-				terrain = hills
-				terrain = mountains
-				terrain = forest
-				terrain = taiga
-				terrain = jungle
-				terrain = wetlands
-				terrain = steppe
-			}
-			NOT = {
-				has_building_or_higher = barracks_04
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			}
-		}
-		add_building = barracks_04
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = drylands
-				terrain = hills
-				terrain = mountains
-				terrain = forest
-				terrain = taiga
-				terrain = jungle
-				terrain = wetlands
-				terrain = steppe
-			}
-			NOT = {
-				has_building_or_higher = barracks_02
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			}
-		}
-		add_building = barracks_02
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = farmlands
-				terrain = plains
-				terrain = drylands
-				terrain = hills
-				terrain = mountains
-				terrain = forest
-				terrain = taiga
-				terrain = jungle
-				terrain = wetlands
-				terrain = steppe
-			}
-			NOT = {
-				has_building_or_higher = barracks_01
-			}
-		}
-		add_building = barracks_01
-	}
-
-	#camel farms
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
-			}
-			OR = {
-				terrain = desert
-				terrain = desert_mountains
-				terrain = oasis
-				terrain = floodplains
-			}
-			NOT = {
-				has_building_or_higher = camel_farms_08
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			has_innovation = innovation_royal_armory
-			}
-		}
-		add_building = camel_farms_08
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
-			}
-			OR = {
-				terrain = desert
-				terrain = desert_mountains
-				terrain = oasis
-				terrain = floodplains
-			}
-			NOT = {
-				has_building_or_higher = camel_farms_06
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			}
-		}
-		add_building = camel_farms_06
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
-			}
-			OR = {
-				terrain = desert
-				terrain = desert_mountains
-				terrain = oasis
-				terrain = floodplains
-			}
-			NOT = {
-				has_building_or_higher = camel_farms_04
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			}
-		}
-		add_building = camel_farms_04
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = desert
-				terrain = desert_mountains
-				terrain = oasis
-				terrain = floodplains
-			}
-			NOT = {
-				has_building_or_higher = camel_farms_02
-			}
-			culture = {
-			has_innovation = innovation_barracks
-			}
-		}
-		add_building = camel_farms_02
-	}
-	if = {
-		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = desert
-				terrain = desert_mountains
-				terrain = oasis
-				terrain = floodplains
-			}
-			NOT = {
-				has_building_or_higher = camel_farms_01
-			}
-		}
-		add_building = camel_farms_01
-	}
-
 	#logging camps
 	if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
-			}
-			OR = {
-				terrain = taiga
-				terrain = forest
-				terrain = jungle
+			building_logging_camps_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_cranes
 			}
 			NOT = {
 				has_building_or_higher = logging_camps_08
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
-			has_innovation = innovation_cranes
-			}
 		}
 		add_building = logging_camps_08
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
-			}
-			OR = {
-				terrain = taiga
-				terrain = forest
-				terrain = jungle
+			building_logging_camps_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_guilds
 			}
 			NOT = {
 				has_building_or_higher = logging_camps_06
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = logging_camps_06
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
-			}
-			OR = {
-				terrain = taiga
-				terrain = forest
-				terrain = jungle
+			building_logging_camps_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_manorialism
 			}
 			NOT = {
 				has_building_or_higher = logging_camps_04
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = logging_camps_04
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = taiga
-				terrain = forest
-				terrain = jungle
+			building_logging_camps_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_crop_rotation
 			}
 			NOT = {
 				has_building_or_higher = logging_camps_02
 			}
-			culture = {
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = logging_camps_02
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = taiga
-				terrain = forest
-				terrain = jungle
-			}
+			building_logging_camps_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
 			NOT = {
 				has_building_or_higher = logging_camps_01
 			}
@@ -1802,87 +1012,60 @@ build_up_county_effect = {
 	#peat quarries
 	if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
+			building_peat_quarries_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_cranes
 			}
-			terrain = wetlands
 			NOT = {
 				has_building_or_higher = peat_quarries_08
-			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
-			has_innovation = innovation_cranes
 			}
 		}
 		add_building = peat_quarries_08
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
+			building_peat_quarries_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_guilds
 			}
-			terrain = wetlands
 			NOT = {
 				has_building_or_higher = peat_quarries_06
-			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
 			}
 		}
 		add_building = peat_quarries_06
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
+			building_peat_quarries_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_manorialism
 			}
-			terrain = wetlands
 			NOT = {
 				has_building_or_higher = peat_quarries_04
-			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_crop_rotation
 			}
 		}
 		add_building = peat_quarries_04
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
+			building_peat_quarries_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_crop_rotation
 			}
-			terrain = wetlands
 			NOT = {
 				has_building_or_higher = peat_quarries_02
 			}
-			culture = {
-			has_innovation = innovation_crop_rotation
-			}
-
 		}
 		add_building = peat_quarries_02
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			terrain = wetlands
+			building_peat_quarries_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
 			NOT = {
 				has_building_or_higher = peat_quarries_01
 			}
@@ -1890,89 +1073,63 @@ build_up_county_effect = {
 		add_building = peat_quarries_01
 	}
 
-	#hill farms
+	#Hill_farms
 	if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
+			building_hill_farms_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_cranes
 			}
-			terrain = hills
 			NOT = {
 				has_building_or_higher = hill_farms_08
-			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
-			has_innovation = innovation_cranes
 			}
 		}
 		add_building = hill_farms_08
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
+			building_hill_farms_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_guilds
 			}
-			terrain = hills
 			NOT = {
 				has_building_or_higher = hill_farms_06
-			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
 			}
 		}
 		add_building = hill_farms_06
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
+			building_hill_farms_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_manorialism
 			}
-			terrain = hills
 			NOT = {
 				has_building_or_higher = hill_farms_04
-			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_crop_rotation
 			}
 		}
 		add_building = hill_farms_04
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
+			building_hill_farms_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_crop_rotation
 			}
-			terrain = hills
 			NOT = {
 				has_building_or_higher = hill_farms_02
-			}
-			culture = {
-			has_innovation = innovation_crop_rotation
 			}
 		}
 		add_building = hill_farms_02
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			terrain = hills
+			building_hill_farms_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
 			NOT = {
 				has_building_or_higher = hill_farms_01
 			}
@@ -1980,89 +1137,63 @@ build_up_county_effect = {
 		add_building = hill_farms_01
 	}
 
-	#elephant pens
+	#elephant_pens
 	if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
+			building_elephant_pens_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_cranes
 			}
-			terrain = jungle
 			NOT = {
 				has_building_or_higher = elephant_pens_08
-			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
-			has_innovation = innovation_cranes
 			}
 		}
 		add_building = elephant_pens_08
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
+			building_elephant_pens_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_guilds
 			}
-			terrain = jungle
 			NOT = {
 				has_building_or_higher = elephant_pens_06
-			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
 			}
 		}
 		add_building = elephant_pens_06
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
+			building_elephant_pens_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_manorialism
 			}
-			terrain = jungle
 			NOT = {
 				has_building_or_higher = elephant_pens_04
-			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_crop_rotation
 			}
 		}
 		add_building = elephant_pens_04
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
+			building_elephant_pens_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_crop_rotation
 			}
-			terrain = jungle
 			NOT = {
 				has_building_or_higher = elephant_pens_02
-			}
-			culture = {
-			has_innovation = innovation_crop_rotation
 			}
 		}
 		add_building = elephant_pens_02
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			terrain = jungle
+			building_elephant_pens_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
 			NOT = {
 				has_building_or_higher = elephant_pens_01
 			}
@@ -2073,101 +1204,60 @@ build_up_county_effect = {
 	#plantations
 	if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
-			}
-			OR = {
-				terrain = desert
-				terrain = oasis
+			building_plantations_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_cranes
 			}
 			NOT = {
 				has_building_or_higher = plantations_08
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
-			has_innovation = innovation_cranes
-			}
 		}
 		add_building = plantations_08
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
-			}
-			OR = {
-				terrain = desert
-				terrain = oasis
+			building_plantations_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_guilds
 			}
 			NOT = {
 				has_building_or_higher = plantations_06
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = plantations_06
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
-			}
-			OR = {
-				terrain = desert
-				terrain = oasis
+			building_plantations_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_manorialism
 			}
 			NOT = {
 				has_building_or_higher = plantations_04
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = plantations_04
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = desert
-				terrain = oasis
+			building_plantations_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_crop_rotation
 			}
 			NOT = {
 				has_building_or_higher = plantations_02
 			}
-			culture = {
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = plantations_02
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = desert
-				terrain = oasis
-			}
+			building_plantations_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
 			NOT = {
 				has_building_or_higher = plantations_01
 			}
@@ -2178,101 +1268,60 @@ build_up_county_effect = {
 	#quarries
 	if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_04
-				has_building_or_higher = temple_04
-				has_building_or_higher = city_04
-			}
-			OR = {
-				terrain = mountains
-				terrain = desert_mountains
+			building_quarries_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_cranes
 			}
 			NOT = {
 				has_building_or_higher = quarries_08
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
-			has_innovation = innovation_cranes
-			}
 		}
 		add_building = quarries_08
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_03
-				has_building_or_higher = temple_03
-				has_building_or_higher = city_03
-			}
-			OR = {
-				terrain = mountains
-				terrain = desert_mountains
+			building_quarries_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_guilds
 			}
 			NOT = {
 				has_building_or_higher = quarries_06
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_windmills
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = quarries_06
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_02
-				has_building_or_higher = temple_02
-				has_building_or_higher = city_02
-			}
-			OR = {
-				terrain = mountains
-				terrain = desert_mountains
+			building_quarries_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_manorialism
 			}
 			NOT = {
 				has_building_or_higher = quarries_04
 			}
-			culture = {
-			has_innovation = innovation_manorialism
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = quarries_04
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = mountains
-				terrain = desert_mountains
+			building_quarries_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_crop_rotation
 			}
 			NOT = {
 				has_building_or_higher = quarries_02
 			}
-			culture = {
-			has_innovation = innovation_crop_rotation
-			}
 		}
 		add_building = quarries_02
 	}
-	if = {
+	else_if = {
 		limit = {
-			OR = {
-				has_building_or_higher = castle_01
-				has_building_or_higher = temple_01
-				has_building_or_higher = city_01
-			}
-			OR = {
-				terrain = mountains
-				terrain = desert_mountains
-			}
+			building_quarries_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
 			NOT = {
 				has_building_or_higher = quarries_01
 			}
@@ -2280,76 +1329,1173 @@ build_up_county_effect = {
 		add_building = quarries_01
 	}
 
-	#hill forts
+	#ramparts
 	if = {
 		limit = {
-			has_building_or_higher = castle_04
-			OR = {
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = hills
+			building_ramparts_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_machicolations
+			}
+			NOT = {
+				has_building_or_higher = ramparts_08
+			}
+		}
+		add_building = ramparts_08
+	}
+	else_if = {
+		limit = {
+			building_ramparts_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_hoardings
+			}
+			NOT = {
+				has_building_or_higher = ramparts_06
+			}
+		}
+		add_building = ramparts_06
+	}
+	else_if = {
+		limit = {
+			building_ramparts_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_battlements
+			}
+			NOT = {
+				has_building_or_higher = ramparts_04
+			}
+		}
+		add_building = ramparts_04
+	}
+	else_if = {
+		limit = {
+			building_ramparts_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_motte
+			}
+			NOT = {
+				has_building_or_higher = ramparts_02
+			}
+		}
+		add_building = ramparts_02
+	}
+	else_if = {
+		limit = {
+			building_ramparts_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = ramparts_01
+			}
+		}
+		add_building = ramparts_01
+	}
+
+	#curtain_walls
+	if = {
+		limit = {
+			building_curtain_walls_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_machicolations
+			}
+			NOT = {
+				has_building_or_higher = curtain_walls_08
+			}
+		}
+		add_building = curtain_walls_08
+	}
+	else_if = {
+		limit = {
+			building_curtain_walls_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_hoardings
+			}
+			NOT = {
+				has_building_or_higher = curtain_walls_06
+			}
+		}
+		add_building = curtain_walls_06
+	}
+	else_if = {
+		limit = {
+			building_curtain_walls_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_battlements
+			}
+			NOT = {
+				has_building_or_higher = curtain_walls_04
+			}
+		}
+		add_building = curtain_walls_04
+	}
+	else_if = {
+		limit = {
+			building_curtain_walls_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_motte
+			}
+			NOT = {
+				has_building_or_higher = curtain_walls_02
+			}
+		}
+		add_building = curtain_walls_02
+	}
+	else_if = {
+		limit = {
+			building_curtain_walls_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = curtain_walls_01
+			}
+		}
+		add_building = curtain_walls_01
+	}
+
+	#watchtowers
+	if = {
+		limit = {
+			building_watchtowers_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_machicolations
+			}
+			NOT = {
+				has_building_or_higher = watchtowers_08
+			}
+		}
+		add_building = watchtowers_08
+	}
+	else_if = {
+		limit = {
+			building_watchtowers_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_hoardings
+			}
+			NOT = {
+				has_building_or_higher = watchtowers_06
+			}
+		}
+		add_building = watchtowers_06
+	}
+	else_if = {
+		limit = {
+			building_watchtowers_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_battlements
+			}
+			NOT = {
+				has_building_or_higher = watchtowers_04
+			}
+		}
+		add_building = watchtowers_04
+	}
+	else_if = {
+		limit = {
+			building_watchtowers_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_motte
+			}
+			NOT = {
+				has_building_or_higher = watchtowers_02
+			}
+		}
+		add_building = watchtowers_02
+	}
+	else_if = {
+		limit = {
+			building_watchtowers_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = watchtowers_01
+			}
+		}
+		add_building = watchtowers_01
+	}
+
+	#hill_forts
+	if = {
+		limit = {
+			building_hill_forts_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_machicolations
 			}
 			NOT = {
 				has_building_or_higher = hill_forts_08
 			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			has_innovation = innovation_royal_armory
-			}
 		}
 		add_building = hill_forts_08
 	}
-	if = {
+	else_if = {
 		limit = {
-			has_building_or_higher = castle_03
-			OR = {
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = hills
+			building_hill_forts_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_hoardings
 			}
 			NOT = {
 				has_building_or_higher = hill_forts_06
 			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			has_innovation = innovation_castle_baileys
-			}
 		}
 		add_building = hill_forts_06
 	}
-	if = {
+	else_if = {
 		limit = {
-			has_building_or_higher = castle_02
-			OR = {
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = hills
+			building_hill_forts_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_battlements
 			}
 			NOT = {
 				has_building_or_higher = hill_forts_04
 			}
-			culture = {
-			has_innovation = innovation_barracks
-			has_innovation = innovation_burhs
-			}
 		}
 		add_building = hill_forts_04
 	}
-	if = {
+	else_if = {
 		limit = {
-			has_building_or_higher = castle_01
-			OR = {
-				terrain = mountains
-				terrain = desert_mountains
-				terrain = hills
+			building_hill_forts_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_motte
 			}
 			NOT = {
 				has_building_or_higher = hill_forts_02
 			}
 		}
 		add_building = hill_forts_02
+	}
+	else_if = {
+		limit = {
+			building_hill_forts_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = hill_forts_01
+			}
+		}
+		add_building = hill_forts_01
+	}
+
+	#wind_furnace
+	if = {
+		limit = {
+			building_wind_furnace_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = wind_furnace_08
+			}
+		}
+		add_building = wind_furnace_08
+	}
+	else_if = {
+		limit = {
+			building_wind_furnace_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = wind_furnace_06
+			}
+		}
+		add_building = wind_furnace_06
+	}
+	else_if = {
+		limit = {
+			building_wind_furnace_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			NOT = {
+				has_building_or_higher = wind_furnace_05
+			}
+		}
+		add_building = wind_furnace_05
+	}
+	else_if = {
+		limit = {
+			building_wind_furnace_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_burhs
+			}
+			NOT = {
+				has_building_or_higher = wind_furnace_04
+			}
+		}
+		add_building = wind_furnace_04
+	}
+	else_if = {
+		limit = {
+			building_wind_furnace_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_barracks
+			}
+			NOT = {
+				has_building_or_higher = wind_furnace_02
+			}
+		}
+		add_building = wind_furnace_02
+	}
+	else_if = {
+		limit = {
+			building_wind_furnace_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = wind_furnace_01
+			}
+		}
+		add_building = wind_furnace_01
+	}
+
+	#workshops
+	if = {
+		limit = {
+			building_workshops_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = workshops_08
+			}
+		}
+		add_building = workshops_08
+	}
+	else_if = {
+		limit = {
+			building_workshops_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = workshops_06
+			}
+		}
+		add_building = workshops_06
+	}
+	else_if = {
+		limit = {
+			building_workshops_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_advanced_bowmaking
+			}
+			NOT = {
+				has_building_or_higher = workshops_05
+			}
+		}
+		add_building = workshops_05
+	}
+	else_if = {
+		limit = {
+			building_workshops_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_advanced_bowmaking
+			}
+			NOT = {
+				has_building_or_higher = workshops_04
+			}
+		}
+		add_building = workshops_04
+	}
+	else_if = {
+		limit = {
+			building_workshops_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_advanced_bowmaking
+			}
+			NOT = {
+				has_building_or_higher = workshops_02
+			}
+		}
+		add_building = workshops_02
+	}
+
+	#horse_pastures
+	if = {
+		limit = {
+			building_horse_pastures_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = horse_pastures_08
+			}
+		}
+		add_building = horse_pastures_08
+	}
+	else_if = {
+		limit = {
+			building_horse_pastures_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = horse_pastures_06
+			}
+		}
+		add_building = horse_pastures_06
+	}
+	else_if = {
+		limit = {
+			building_horse_pastures_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			NOT = {
+				has_building_or_higher = horse_pastures_05
+			}
+		}
+		add_building = horse_pastures_05
+	}
+	else_if = {
+		limit = {
+			building_horse_pastures_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_burhs
+			}
+			NOT = {
+				has_building_or_higher = horse_pastures_04
+			}
+		}
+		add_building = horse_pastures_04
+	}
+	else_if = {
+		limit = {
+			building_horse_pastures_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_barracks
+			}
+			NOT = {
+				has_building_or_higher = horse_pastures_02
+			}
+		}
+		add_building = horse_pastures_02
+	}
+	else_if = {
+		limit = {
+			building_horse_pastures_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = horse_pastures_01
+			}
+		}
+		add_building = horse_pastures_01
+	}
+
+	#hillside_grazing
+	if = {
+		limit = {
+			building_hillside_grazing_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = hillside_grazing_08
+			}
+		}
+		add_building = hillside_grazing_08
+	}
+	else_if = {
+		limit = {
+			building_hillside_grazing_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = hillside_grazing_06
+			}
+		}
+		add_building = hillside_grazing_06
+	}
+	else_if = {
+		limit = {
+			building_hillside_grazing_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			NOT = {
+				has_building_or_higher = hillside_grazing_05
+			}
+		}
+		add_building = hillside_grazing_05
+	}
+	else_if = {
+		limit = {
+			building_hillside_grazing_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_burhs
+			}
+			NOT = {
+				has_building_or_higher = hillside_grazing_04
+			}
+		}
+		add_building = hillside_grazing_04
+	}
+	else_if = {
+		limit = {
+			building_hillside_grazing_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_barracks
+			}
+			NOT = {
+				has_building_or_higher = hillside_grazing_02
+			}
+		}
+		add_building = hillside_grazing_02
+	}
+	else_if = {
+		limit = {
+			building_hillside_grazing_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = hillside_grazing_01
+			}
+		}
+		add_building = hillside_grazing_01
+	}
+
+	#warrior_lodges
+	if = {
+		limit = {
+			building_warrior_lodges_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = warrior_lodges_08
+			}
+		}
+		add_building = warrior_lodges_08
+	}
+	else_if = {
+		limit = {
+			building_warrior_lodges_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = warrior_lodges_06
+			}
+		}
+		add_building = warrior_lodges_06
+	}
+	else_if = {
+		limit = {
+			building_warrior_lodges_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			NOT = {
+				has_building_or_higher = warrior_lodges_05
+			}
+		}
+		add_building = warrior_lodges_05
+	}
+	else_if = {
+		limit = {
+			building_warrior_lodges_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_burhs
+			}
+			NOT = {
+				has_building_or_higher = warrior_lodges_04
+			}
+		}
+		add_building = warrior_lodges_04
+	}
+	else_if = {
+		limit = {
+			building_warrior_lodges_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_barracks
+			}
+			NOT = {
+				has_building_or_higher = warrior_lodges_02
+			}
+		}
+		add_building = warrior_lodges_02
+	}
+	else_if = {
+		limit = {
+			building_warrior_lodges_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = warrior_lodges_01
+			}
+		}
+		add_building = warrior_lodges_01
+	}
+
+	#military camps
+	if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			building_military_camps_requirement_terrain = yes
+			NOT = {
+				has_building_or_higher = military_camps_08
+			}
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+		}
+		add_building = military_camps_08
+	}
+	else_if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			building_military_camps_requirement_terrain = yes
+			NOT = {
+				has_building_or_higher = military_camps_06
+			}
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+		}
+		add_building = military_camps_06
+	}
+	else_if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			building_military_camps_requirement_terrain = yes
+			NOT = {
+				has_building_or_higher = military_camps_06
+			}
+			culture = {
+				has_innovation = innovation_castle_baileys
+			}
+		}
+		add_building = military_camps_05
+	}
+	else_if = {
+		limit = {
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			building_military_camps_requirement_terrain = yes
+			NOT = {
+				has_building_or_higher = military_camps_04
+			}
+			culture = {
+				has_innovation = innovation_burhs
+			}
+		}
+		add_building = military_camps_04
+	}
+	else_if = {
+		limit = {
+			building_military_camps_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = military_camps_02
+			}
+			culture = {
+				has_innovation = innovation_barracks
+			}
+		}
+		add_building = military_camps_02
+	}
+	else_if = {
+		limit = {
+			building_military_camps_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = military_camps_01
+			}
+		}
+		add_building = military_camps_01
+	}
+
+	#regimental_grounds
+	if = {
+		limit = {
+			building_regimental_grounds_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = regimental_grounds_08
+			}
+		}
+		add_building = regimental_grounds_08
+	}
+	else_if = {
+		limit = {
+			building_regimental_grounds_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = regimental_grounds_06
+			}
+		}
+		add_building = regimental_grounds_06
+	}
+	else_if = {
+		limit = {
+			building_regimental_grounds_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			NOT = {
+				has_building_or_higher = regimental_grounds_05
+			}
+		}
+		add_building = regimental_grounds_05
+	}
+	else_if = {
+		limit = {
+			building_regimental_grounds_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_burhs
+			}
+			NOT = {
+				has_building_or_higher = regimental_grounds_04
+			}
+		}
+		add_building = regimental_grounds_04
+	}
+	else_if = {
+		limit = {
+			building_regimental_grounds_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_barracks
+			}
+			NOT = {
+				has_building_or_higher = regimental_grounds_02
+			}
+		}
+		add_building = regimental_grounds_02
+	}
+	else_if = {
+		limit = {
+			building_regimental_grounds_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = regimental_grounds_01
+			}
+		}
+		add_building = regimental_grounds_01
+	}
+
+	#outposts
+	if = {
+		limit = {
+			building_outposts_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = outposts_08
+			}
+		}
+		add_building = outposts_08
+	}
+	else_if = {
+		limit = {
+			building_outposts_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = outposts_06
+			}
+		}
+		add_building = outposts_06
+	}
+	else_if = {
+		limit = {
+			building_outposts_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			NOT = {
+				has_building_or_higher = outposts_05
+			}
+		}
+		add_building = outposts_05
+	}
+	else_if = {
+		limit = {
+			building_outposts_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_burhs
+			}
+			NOT = {
+				has_building_or_higher = outposts_04
+			}
+		}
+		add_building = outposts_04
+	}
+	else_if = {
+		limit = {
+			building_outposts_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_barracks
+			}
+			NOT = {
+				has_building_or_higher = outposts_02
+			}
+		}
+		add_building = outposts_02
+	}
+	else_if = {
+		limit = {
+			building_outposts_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = outposts_01
+			}
+		}
+		add_building = outposts_01
+	}
+
+	#barracks
+	if = {
+		limit = {
+			building_barracks_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = barracks_08
+			}
+		}
+		add_building = barracks_08
+	}
+	else_if = {
+		limit = {
+			building_barracks_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = barracks_06
+			}
+		}
+		add_building = barracks_06
+	}
+	else_if = {
+		limit = {
+			building_barracks_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			NOT = {
+				has_building_or_higher = barracks_05
+			}
+		}
+		add_building = barracks_05
+	}
+	else_if = {
+		limit = {
+			building_barracks_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_burhs
+			}
+			NOT = {
+				has_building_or_higher = barracks_04
+			}
+		}
+		add_building = barracks_04
+	}
+	else_if = {
+		limit = {
+			building_barracks_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_barracks
+			}
+			NOT = {
+				has_building_or_higher = barracks_02
+			}
+		}
+		add_building = barracks_02
+	}
+	else_if = {
+		limit = {
+			building_barracks_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = barracks_01
+			}
+		}
+		add_building = barracks_01
+	}
+
+	#camel_farms
+	if = {
+		limit = {
+			building_camel_farms_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = camel_farms_08
+			}
+		}
+		add_building = camel_farms_08
+	}
+	else_if = {
+		limit = {
+			building_camel_farms_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = camel_farms_06
+			}
+		}
+		add_building = camel_farms_06
+	}
+	else_if = {
+		limit = {
+			building_camel_farms_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			NOT = {
+				has_building_or_higher = camel_farms_05
+			}
+		}
+		add_building = camel_farms_05
+	}
+	else_if = {
+		limit = {
+			building_camel_farms_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_burhs
+			}
+			NOT = {
+				has_building_or_higher = camel_farms_04
+			}
+		}
+		add_building = camel_farms_04
+	}
+	else_if = {
+		limit = {
+			building_camel_farms_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_barracks
+			}
+			NOT = {
+				has_building_or_higher = camel_farms_02
+			}
+		}
+		add_building = camel_farms_02
+	}
+	else_if = {
+		limit = {
+			building_camel_farms_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = camel_farms_01
+			}
+		}
+		add_building = camel_farms_01
+	}
+
+	#stables
+	if = {
+		limit = {
+			building_stables_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = stables_08
+			}
+		}
+		add_building = stables_08
+	}
+	else_if = {
+		limit = {
+			building_stables_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = stables_06
+			}
+		}
+		add_building = stables_06
+	}
+	else_if = {
+		limit = {
+			building_stables_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			NOT = {
+				has_building_or_higher = stables_05
+			}
+		}
+		add_building = stables_05
+	}
+	else_if = {
+		limit = {
+			building_stables_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_burhs
+			}
+			NOT = {
+				has_building_or_higher = stables_04
+			}
+		}
+		add_building = stables_04
+	}
+	else_if = {
+		limit = {
+			building_stables_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_barracks
+			}
+			NOT = {
+				has_building_or_higher = stables_02
+			}
+		}
+		add_building = stables_02
+	}
+	else_if = {
+		limit = {
+			building_stables_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = stables_01
+			}
+		}
+		add_building = stables_01
+	}
+
+	#smiths
+	if = {
+		limit = {
+			building_smiths_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 04 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = smiths_08
+			}
+		}
+		add_building = smiths_08
+	}
+	else_if = {
+		limit = {
+			building_smiths_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_royal_armory
+			}
+			NOT = {
+				has_building_or_higher = smiths_06
+			}
+		}
+		add_building = smiths_06
+	}
+	else_if = {
+		limit = {
+			building_smiths_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 03 }
+			culture = {
+				has_innovation = innovation_castle_baileys
+			}
+			NOT = {
+				has_building_or_higher = smiths_05
+			}
+		}
+		add_building = smiths_05
+	}
+	else_if = {
+		limit = {
+			building_smiths_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 02 }
+			culture = {
+				has_innovation = innovation_burhs
+			}
+			NOT = {
+				has_building_or_higher = smiths_04
+			}
+		}
+		add_building = smiths_04
+	}
+	else_if = {
+		limit = {
+			building_smiths_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			culture = {
+				has_innovation = innovation_barracks
+			}
+			NOT = {
+				has_building_or_higher = smiths_02
+			}
+		}
+		add_building = smiths_02
+	}
+	else_if = {
+		limit = {
+			building_smiths_requirement_terrain = yes
+			building_requirement_castle_city_church = { LEVEL = 01 }
+			NOT = {
+				has_building_or_higher = smiths_01
+			}
+		}
+		add_building = smiths_01
 	}
 }

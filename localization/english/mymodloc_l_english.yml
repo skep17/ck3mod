@@ -10,8 +10,6 @@
   c_samtskhe:0 "Samtskhe"
   c_tashir-dzoraget:0 "Tashir-Dzoraget"
   d_khachen:0 "Khachen"
-  c_paytakaran:0 "Paytakaran"
-  d_ardabil:0 "Ardabil"
   trait_titleman:0 "Titleman"
   trait_titleman_desc:0 "Your character holds many titles and vassals"
   trait_titleman_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] is holder of many titles and vassals."

@@ -1,7 +1,6 @@
 ﻿NCharacter = {
 	MAXIMUM_DIPLOMATIC_RANGE = 1500
 	MAXIMUM_DIPLOMATIC_RANGE_RESTRICTED = 1000	# Used if a game rule with the restricted_diplomatic_range flag is used
-	MINIMUM_TIER_FOR_REGNAL_NUMBERING = 2
 }
 
 NChildbirth = {

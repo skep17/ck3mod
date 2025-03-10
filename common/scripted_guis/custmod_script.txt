@@ -44,6 +44,12 @@ invite_local_man = {
 			province_owner.liege.liege = scope:player
 			province_owner.liege.liege.liege = scope:player
 			province_owner.top_liege = scope:player
+			AND = {
+				scope:player = {
+					is_landless_adventurer = yes
+				}
+				scope:player.location = THIS
+			}
 		}
 	}
 	is_valid = {
@@ -135,6 +141,12 @@ invite_local_woman = {
 			province_owner.liege.liege = scope:player
 			province_owner.liege.liege.liege = scope:player
 			province_owner.top_liege = scope:player
+			AND = {
+				scope:player = {
+					is_landless_adventurer = yes
+				}
+				scope:player.location = THIS
+			}
 		}
 	}
 	is_valid = {

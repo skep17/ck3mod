@@ -1,0 +1,416 @@
+holdings_1_to_2 = {
+	title = holdings_1_to_2_title
+
+	is_shown = {
+		is_ai = no
+	}
+
+	effect = {
+		every_sub_realm_county = {
+			limit = {
+				holder = root
+			}
+
+			every_county_province  = {
+				if = {
+					limit = {
+						has_building = castle_01
+					}
+					add_building = castle_02
+				}
+				else_if = {
+					limit = {
+						has_building = temple_01
+					}
+					add_building = temple_02
+				}
+				else_if = {
+					limit = {
+						has_building = city_01
+					}
+					add_building = city_02
+				}
+			}
+		}
+	}
+
+	ai_will_do = 0
+	ai_check_interval = 0
+}
+
+holdings_2_to_3 = {
+  	title = holdings_2_to_3_title
+
+	is_shown = {
+		is_ai = no
+	}
+
+  	effect = {
+		every_sub_realm_county = {
+			limit = {
+				holder = root
+			}
+
+			every_county_province  = {
+				if = {
+					limit = {
+						has_building = castle_02
+					}
+					add_building = castle_03
+				}
+				else_if = {
+					limit = {
+						has_building = temple_02
+					}
+					add_building = temple_03
+				}
+				else_if = {
+					limit = {
+						has_building = city_02
+					}
+					add_building = city_03
+				}
+			}
+		}
+  	}
+
+  ai_will_do = 0
+	ai_check_interval = 0
+}
+
+holdings_3_to_4 = {
+	title = holdings_3_to_4_title
+
+	is_shown = {
+		is_ai = no
+	}
+
+	effect = {
+		every_sub_realm_county = {
+			limit = {
+				holder = root
+			}
+
+			every_county_province  = {
+				if = {
+					limit = {
+						has_building = castle_03
+					}
+					add_building = castle_04
+				}
+				else_if = {
+					limit = {
+						has_building = temple_03
+					}
+					add_building = temple_04
+				}
+				else_if = {
+					limit = {
+						has_building = city_03
+					}
+					add_building = city_04
+				}
+			}
+		}
+	}
+
+	ai_will_do = 0
+	ai_check_interval = 0
+}
+
+buildup_realm = {
+	title = buildup_realm
+
+	is_shown = {
+		is_ai = no
+	}
+
+	effect = {
+		if = {
+			every_sub_realm_county = {
+				limit = {
+					holder = root
+				}
+
+				every_county_province = {
+					if = {
+						limit = {
+							has_building_or_higher = city_01
+							NOT = {
+								has_building_or_higher = guild_halls_01
+							}
+						}
+
+						add_building = guild_halls_01
+					}
+
+					if = {
+						limit = {
+							has_building_or_higher = temple_01
+							NOT = {
+								has_building_or_higher = monastic_schools_01
+							}
+						}
+
+						add_building = monastic_schools_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							NOT = {
+								has_building_or_higher = common_tradeport_01
+							}
+							building_common_tradeport_requirement_terrain = yes
+						}
+
+						add_building = common_tradeport_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							building_military_camps_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = military_camps_01
+							}
+						}
+
+						add_building = military_camps_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							building_pastures_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = pastures_01
+							}
+						}
+						
+						add_building = pastures_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							building_hunting_grounds_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = hunting_grounds_01
+							}
+						}
+						
+						add_building = hunting_grounds_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							building_orchards_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = orchards_01
+							}
+						}
+						
+						add_building = orchards_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							building_farm_estates_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = farm_estates_01
+							}
+						}
+						
+						add_building = farm_estates_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							building_regimental_grounds_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = regimental_grounds_01
+							}
+						}
+						
+						add_building = regimental_grounds_01
+					}
+
+					if = {
+						limit = {
+							has_building_or_higher = castle_01
+							building_ramparts_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = ramparts_01
+							}
+						}
+						
+						add_building = ramparts_01
+					}
+
+					if = {
+						limit = {
+							has_building_or_higher = castle_01
+							building_curtain_walls_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = curtain_walls_01
+							}
+						}
+						
+						add_building = curtain_walls_01
+					}
+
+					if = {
+						limit = {
+							has_building_or_higher = castle_01
+							building_watchtowers_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = watchtowers_01
+							}
+						}
+						
+						add_building = watchtowers_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							building_cereal_fields_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = cereal_fields_01
+							}
+						}
+						
+						add_building = cereal_fields_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							building_outposts_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = outposts_01
+							}
+						}
+						
+						add_building = outposts_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							building_barracks_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = barracks_01
+							}
+						}
+
+						add_building = barracks_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							building_camel_farms_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = camel_farms_01
+							}
+						}
+
+						add_building = camel_farms_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							building_logging_camps_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = logging_camps_01
+							}
+						}
+
+						add_building = logging_camps_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							building_peat_quarries_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = peat_quarries_01
+							}
+						}
+
+						add_building = peat_quarries_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							building_hill_farms_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = hill_farms_01
+							}
+						}
+
+						add_building = hill_farms_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							building_elephant_pens_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = elephant_pens_01
+							}
+						}
+
+						add_building = elephant_pens_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							building_plantations_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = plantations_01
+							}
+						}
+
+						add_building = plantations_01
+					}
+
+					if = {
+						limit = {
+							building_requirement_castle_city_church = { LEVEL = 01 }
+							building_quarries_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = quarries_01
+							}
+						}
+
+						add_building = quarries_01
+					}
+
+					if = {
+						limit = {
+							has_building_or_higher = castle_01
+							building_hill_forts_requirement_terrain = yes
+							NOT = {
+								has_building_or_higher = hill_forts_01
+							}
+						}
+
+						add_building = hill_forts_01
+					}
+				}
+			}
+		}
+	}
+
+	ai_will_do = 0
+	ai_check_interval = 0
+}

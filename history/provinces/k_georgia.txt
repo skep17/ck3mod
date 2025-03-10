@@ -460,7 +460,7 @@
 		buildings = {
 			curtain_walls_01
 			cereal_fields_01
-			military_camps_01
+			#military_camps_01
 		}
 	}
 	1084.1.1 = {
@@ -572,7 +572,10 @@
 	holding = city_holding
 	
 	# History
-
+	605.1.1 = {
+		special_building_slot = jvari_monastery
+		special_building = jvari_monastery
+	}
 }
 
 # 5765 - Gavazi
