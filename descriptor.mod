@@ -3,4 +3,4 @@ tags={
 	"Balance"
 }
 name="custmod"
-supported_version="1.6.1.2"
+supported_version="1.14.*"
