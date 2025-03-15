@@ -1,7 +1,7 @@
 titleman = {
 	domain_limit = 900
 	vassal_limit = 900
-	build_speed = 100
+	build_speed = -100
 
 	genetic = no
 	good = yes
