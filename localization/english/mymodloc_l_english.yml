@@ -13,3 +13,6 @@
   trait_titleman:0 "Titleman"
   trait_titleman_desc:0 "Your character holds many titles and vassals"
   trait_titleman_character_desc:0 "[ROOT.GetCharacter.GetFirstNameNoTooltip] is holder of many titles and vassals."
+  mymod_duchy_name:0 "[mymod_origin_county.GetNameNoTierNoTooltip]"
+  mymod_duchy_name_adj:0 "[mymod_origin_county.GetAdjectiveNoTooltip]"
+  mymod_vassal_death_desc:0 "Your vassal, [dead_character.GetFirstNameNoTooltip], [dead_character.GetDeathReason]. [dead_character_heir.GetFirstNameNoTooltip] has become your new vassal"

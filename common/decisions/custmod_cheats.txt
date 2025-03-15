@@ -1,3 +1,23 @@
+abdicate_peacful = {
+	title = "Leave throne and start peacful life"
+
+    is_shown = {
+		is_ai = no
+	}
+
+    effect = {
+		depose = yes
+		primary_spouse = {
+			add_trait = devoted
+		}
+        add_trait = devoted
+		divorce = primary_spouse
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
 titles_and_vassals_boom = {
     title = "Titles and Vassals Boom"
 
@@ -62,6 +82,47 @@ invite_menu_close = {
 	effect = {
 		root = {
 			remove_variable = invite_menu_open_var
+		}
+	}
+
+	ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_court_positions_open = {
+	title = "Open court positions"
+
+	is_shown = {
+		is_ai = no
+		NOT = {
+			has_variable = invite_court_pos_var
+		}
+	}
+
+	effect = {
+		root = {
+			set_variable = {
+				name = invite_court_pos_var
+				value = 1
+			}
+		}
+	}
+
+	ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_court_positions_close = {
+	title = "Close court positions"
+
+	is_shown = {
+		is_ai = no
+		has_variable = invite_court_pos_var
+	}
+
+	effect = {
+		root = {
+			remove_variable = invite_court_pos_var
 		}
 	}
 
@@ -218,6 +279,315 @@ invite_physician = {
 			learning = 20
 			trait = lifestyle_physician
 			trait = lifestyle_herbalist
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_executioner = {
+    title = "Invite Executioner"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+		has_variable = invite_court_pos_var
+	}
+
+    effect = {
+        create_character = {
+			age = 30
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = none
+			intrigue = 20
+			trait = callous
+			trait = torturer
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_smith = {
+    title = "Invite Impressive Smith"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+		has_variable = invite_court_pos_var
+	}
+
+    effect = {
+        create_character = {
+			age = 30
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.capital_county.culture
+			dynasty = none
+			stewardship = 20
+			prowess = 20
+			trait = strong
+			trait = athletic
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_antiquarian = {
+    title = "Invite Impressive Antiquarian"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+		has_variable = invite_court_pos_var
+	}
+
+    effect = {
+        create_character = {
+			age = 30
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = none
+			learning = 20
+			trait = shy
+			trait = administrator
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_caravan_master = {
+    title = "Invite Impressive Caravan Master"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+		has_variable = invite_court_pos_var
+	}
+
+    effect = {
+        create_character = {
+			age = 30
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = none
+			learning = 17
+			stewardship = 17
+			trait = brave
+			trait = diligent
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_court_tutor = {
+    title = "Invite Impressive Court Tutor"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+		has_variable = invite_court_pos_var
+	}
+
+    effect = {
+        create_character = {
+			age = 40
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = none
+			learning = 25
+			trait = patient
+			trait = intellect_good_3
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_food_taster = {
+    title = "Invite Food Taster"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+		has_variable = invite_court_pos_var
+	}
+
+    effect = {
+        create_character = {
+			age = 30
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = none
+			intrigue = 20
+			trait = gluttonous
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_architect = {
+    title = "Invite Architect"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+		has_variable = invite_court_pos_var
+	}
+
+    effect = {
+        create_character = {
+			age = 30
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = none
+			stewardship = 15
+			trait = architect
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_seneschal = {
+    title = "Invite Impressive Seneschal"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+		has_variable = invite_court_pos_var
+	}
+
+    effect = {
+        create_character = {
+			age = 30
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = none
+			stewardship = 15
+			trait = administrator
+			trait = overseer
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_cupbearer = {
+    title = "Invite Impressive Cupbearer"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+		has_variable = invite_court_pos_var
+	}
+
+    effect = {
+        create_character = {
+			age = 30
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = none
+			diplomacy = 15
+			trait = honest
+			trait = trusting
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_bodyguard = {
+    title = "Invite Impressive Bodyguard"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+		has_variable = invite_court_pos_var
+	}
+
+    effect = {
+        create_character = {
+			age = 30
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = none
+			prowess = 20
+			trait = paranoid
+			trait = brave
+			trait = physique_good_3
+			trait = lifestyle_blademaster
+			save_scope_as = mymod_new_charachter
+		}
+
+		scope:mymod_new_charachter = {
+			add_trait_xp = {
+				trait = lifestyle_blademaster
+				value = 100
+			}
+		}
+    }
+
+    ai_will_do = 0
+	ai_check_interval = 0
+}
+
+invite_entertainer = {
+    title = "Invite Entertainer"
+
+    is_shown = {
+		is_ai = no
+		has_variable = invite_menu_open_var
+		has_variable = invite_court_pos_var
+	}
+
+    effect = {
+        create_character = {
+			age = 30
+			gender = male
+			employer = root
+			faith = root.faith
+			culture = root.culture
+			dynasty = none
+			diplomacy = 20
+			learning = 20
+			trait = gregarious
+			trait = diplomat
+			trait = poet
 		}
     }
 
